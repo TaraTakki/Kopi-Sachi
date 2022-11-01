@@ -1,7 +1,8 @@
 
 function LandingPage(){
     return(
-        <div>Hai</div>
+       
+        <div><img src='background.png' alt='background' className='background'></img>   </div>
     )
     }
 
