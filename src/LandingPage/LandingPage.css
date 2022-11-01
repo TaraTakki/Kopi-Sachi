@@ -1,6 +1,5 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    align-self: center;
     background-color: #F6EBDA;
     overflow: hidden;
   }
@@ -13,6 +12,7 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+
   }
   
   /* Change the color of links on hover */
@@ -21,12 +21,12 @@
     
   }
   
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    color: #FF902A;
-  }
+.logo{
+  width: 119px;
+  height: 67px;
+}
 
-  @media screen and (max-width: 600px) {
+  /* @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
@@ -46,4 +46,4 @@
       display: block;
       text-align: left;
     }
-  }
+  } */
