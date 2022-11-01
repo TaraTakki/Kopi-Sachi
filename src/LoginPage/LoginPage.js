@@ -1,7 +1,7 @@
 
 function LandingPage(){
     return(
-        <div>Hai</div>
+        <div><img src = 'background.png'></img></div>
     )
     }
 
