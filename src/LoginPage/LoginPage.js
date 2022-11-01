@@ -1,7 +1,8 @@
 
 function LandingPage(){
     return(
-        <div><img src = 'background.png'></img></div>
+       
+        <div><img src='background.png' alt='background' className='background'></img>   </div>
     )
     }
 
