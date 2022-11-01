@@ -2,14 +2,30 @@ import './LandingPage.css'
 
 function LandingPage(){
 return(
-    <div className="topnav">
-        <img src='Group 5.png' alt='logo' className='logo'></img> 
-        <div class="object-none object-center">
-        <a className="active" href="#HomePage">Home Page</a>
-        <a href="#Menu">Menu</a>
-        <a href="#Promo">Promo</a>
-        <a href="#Location">Location</a>
-          </div>
+    <div>
+        <body>
+            <div>
+                <img src='Group 5.png' alt='logo' className='Logo'></img>
+            </div>
+    <section className='flex justify-center'><div className='navbar'>
+    <ul>
+    <li><a href="#">Home Page</a></li>
+    <li><a href="#">Menu</a></li>
+    <li><a href="#">Promo</a></li>
+    <li><a href="#">Location</a></li>
+  </ul>
+    </div>
+    </section>
+    <div 
+    className='flex justify-end mr-8'>
+        <button class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-700 hover:border-transparent rounded">
+  Sign Up
+</button>
+<button class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-700 hover:border-transparent rounded">
+  Log In
+</button>
+    </div>
+    </body>
     </div>
 )
 }
