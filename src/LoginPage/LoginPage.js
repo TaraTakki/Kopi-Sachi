@@ -5,19 +5,19 @@ function LandingPage(){
         <div  className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
            
             
-        <div  className=' bg-[#F6EBDA] flex flex-col justify-center items-center'>
-            <section className="flex justify-center"><img src="Group 13.png"/></section>
+        <div  className=' bg-[#F6EBDA] '>
+            <section className="flex flex-col items-center mt-16"><img src="Group 13.png"/></section>
             <form>
-          <img src="Login.png"/>
-                <div>
-                    <label>Email</label>
-                    <input type="text" />
+          <section className="flex flex-col items-center mt-20"><img src="Login.png"/></section>
+                <div className="flex flex-col items-center">
+                    <label></label>
+                    <input className='rounded-lg bg-[#F8D8A9] mt-3 p-1' type="text" />
                 </div>
-                <div>
-                    <label>Password</label>
-                    <input type="password" />
+                <div className="flex flex-col items-center">
+                    <label></label>
+                    <input className='rounded-lg bg-[#F8D8A9] mt-5 p-1' type="password" />
                 </div>
-                <button>Login</button>
+                <div className="flex flex-col items-center mt-5"><button >Submit</button></div>
                 
             </form>
 
