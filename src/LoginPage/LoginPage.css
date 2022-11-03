@@ -11,3 +11,27 @@
 .navbar li{
     float: left;
 }
+
+.txtbgcolor{
+    
+    border: 3px solid;
+    border-color: #433416;
+    
+    
+}
+
+input::placeholder {
+    font-weight: bold;
+    opacity: .4;
+    color: #433416;
+}
+
+.responsive {
+    width: 25%;
+    height: auto;
+  }
+
+  .login {
+    width: 10%;
+    height: auto;
+  }
