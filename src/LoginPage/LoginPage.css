@@ -38,12 +38,18 @@ input::placeholder {
 
   @font-face {
     font-family: 'IBM Plex Sans';
-    src: local('IBM Plex Sans'), url(../fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf) format('truetype');
+    src: local('IBM Plex Sans'), url(../fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf) format('truetype');
   }
   
   .title{
     font-family: IBM Plex Sans, serif;
-   
-  
   }
 
+.logosachi2{
+  position: absolute;
+}
+  
+  .logosachi{
+  position: relative;
+
+  }

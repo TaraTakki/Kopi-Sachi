@@ -8,7 +8,7 @@ function LandingPage(){
             
         <div  className=' bg-[#F6EBDA] '>
             <section className="flex flex-col items-center mt-16"><img src="Group 13.png" className="responsive"/></section>
-            <div className="flex flex-col items-center font-semibold "><h1 className="text-[#57170D] title text-xl">Login</h1></div>
+            <div className="flex flex-col items-center"><h1 className="text-[#57170D] title text-xl font-semibold ">Login</h1></div>
             <form>
           
           
@@ -28,7 +28,9 @@ function LandingPage(){
 
         </div>
         <div className='hidden sm:block'>
-                <img className='w-full h-full object-cover' src="background.png" alt=""/>
+            
+                <img className='w-full h-full object-cover logosachi2' src="background.png" alt=""/>
+                <div className="  " ><img className="logosachi w-6/12 h-6/12 " src="Group 5.png" alt=""/></div>
             </div>
 
             
