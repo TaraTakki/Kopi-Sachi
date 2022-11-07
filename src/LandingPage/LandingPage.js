@@ -3,12 +3,11 @@ import './LandingPage.css'
 function LandingPage(){
 return(
     <div className='scrollpage'>
-        <body>
           <div className='background'>
             <section>
                 <img src='Group 5.png' alt='logo' className='Logo'></img>
-                <img src='Group 14.png' alt='bijikopi1' className='bijikopi1'></img>
-                <img src='Group 15.png' alt='bijikopi2' className='bijikopi2'></img>
+                {/* <img src='Group 14.png' alt='bijikopi1' className='bijikopi1'></img>
+                <img src='Group 15.png' alt='bijikopi2' className='bijikopi2'></img> */}
             </section>
     <section className='flex justify-center my'><div className='navbar'>
     <ul>
@@ -21,12 +20,12 @@ return(
     </section>
     <div 
     className='flex justify-end mr-8 -my-8 mx'>
-        <button class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
-  Sign Up
-</button>
-<button class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full">
+        <a href='#' class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
+          Sign Up
+        </a>
+<a href='/login' class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full">
   Log In
-</button>
+</a>
     </div>
     <div>
       <img src='Group 6.png' alt='kopibg' className='kopibg'></img>
@@ -65,7 +64,6 @@ return(
     </div></a></li>
 </ul>
     </div>
-    </body>
     </div>
 )
 }
