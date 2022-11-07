@@ -1,17 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, createContext} from 'react';
+import LoginPage from './LoginPage/LoginPage';
+import LandingPage from './LandingPage/LandingPage';
 
+
+export const AppContext = createContext(null);
 function App() {
+  const [pengguna, setPengguna] = useState();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p> 
-          Hai Ayok buat website
-        </p>
-        
-      </header>
-    </div>
+    <AppContext.Provider value={{pengguna, setPengguna }}>
+    <LandingPage/>
+    </AppContext.Provider>
   );
 }
 
