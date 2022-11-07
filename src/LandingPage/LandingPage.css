@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 body{
-  background-color: #F6EBDA;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 3945px;
 }
-
+.background{
+  background-color: #F6EBDA;
+  height: 932px;
+}
 .Logo{
   position: absolute;
   width: 119px;
@@ -51,6 +56,15 @@ body{
   margin-left: 850px;
   top: 100px;
 }
+.bijikopi1{
+  position: absolute;
+  margin-left: 950px;
+}
+.bijikopi2{
+  position: absolute;
+  margin-top: 425px;
+  right: 875px;
+}
 .tagline{
   position: absolute;
   font-style: normal;
@@ -58,6 +72,57 @@ body{
   font-size: 60px;
   line-height: 78px;
   margin-left: 85px;
-  top: 200px;
+  top: 175px;
   color: #332C2B;
+}
+.desc{
+  font-size: 20;
+  font-weight: 600;
+  color: #878581;
+  margin-left: 85px;
+  margin-top: 15px;
+}
+.popular{
+position: absolute;
+font-weight: bold;
+font-size: 35px;
+line-height: 46px;
+margin-left: 75px;
+margin-top: 50px;
+color: #FF902A;
+}
+.now{
+font-weight: bold;
+font-size: 35px;
+line-height: 46px;
+margin-left: 210px;
+margin-top: 70px;
+}
+.promobox{
+  position: absolute;
+  width: 1180px;
+  height: 335px;
+  border-radius: 54px;
+  background: #F8D8A9;
+}
+.menu{
+  justify-content: space-between;
+  display: flex;
+  padding-right: 450px;
+  margin-left: 115px;
+  margin-top: 75px;
+}
+.menu ul{
+  list-style-type: none;
+}
+.menu li{
+  display: inline-block;
+}
+.menu div{
+  position: absolute; 
+  width: 322px;
+  height: 329px;
+  background: #FFFFFF;
+  box-shadow: 0px 15px 25px #646464;
+  border-radius: 25px;
 }
