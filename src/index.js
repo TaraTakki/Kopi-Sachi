@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LandingPage from './LandingPage/LandingPage';
 
-import LoginPage from './LoginPage/LoginPage';
 
 import App from './App';
 
@@ -12,7 +11,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LandingPage />
+    < App/>
   </React.StrictMode>
 );
 
