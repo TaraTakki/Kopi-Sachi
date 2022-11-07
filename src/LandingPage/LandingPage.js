@@ -52,11 +52,17 @@ return(
     </div>
 <ul className='menu'>
   <li><a href='lemontea'>
-  <div></div></a></li>
+  <div>
+    <img src='Rectangle 11.png' alt='lemontea' className='lemontea'></img>
+    </div></a></li>
   <li><a href='vanilla'>
-  <div></div></a></li>
+  <div>
+  <img src='Rectangle 11 (1).png' alt='vanilla' className='vanilla'></img>
+    </div></a></li>
   <li><a href='hazelnut'>
-  <div></div></a></li>
+  <div>
+  <img src='Rectangle 11 (2).png' alt='hazelnut' className='hazelnut'></img>
+    </div></a></li>
 </ul>
     </div>
     </body>
