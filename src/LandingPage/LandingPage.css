@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 3945px;
-}
+
 .background{
   background-color: #F6EBDA;
   height: 932px;
