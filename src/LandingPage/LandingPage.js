@@ -2,12 +2,15 @@ import './LandingPage.css'
 
 function LandingPage(){
 return(
-    <div>
+    <div className='scrollpage'>
         <body>
+          <div className='background'>
             <section>
                 <img src='Group 5.png' alt='logo' className='Logo'></img>
+                <img src='Group 14.png' alt='bijikopi1' className='bijikopi1'></img>
+                <img src='Group 15.png' alt='bijikopi2' className='bijikopi2'></img>
             </section>
-    <section className='flex justify-center my-3'><div className='navbar'>
+    <section className='flex justify-center my'><div className='navbar'>
     <ul>
     <li><a href="#">Home Page</a></li>
     <li><a href="#">Menu</a></li>
@@ -38,9 +41,23 @@ return(
       </div>
       <div className='flex justify-start ml-20 my-5'>
       <button class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
-  More menu
-</button>
+      More menu
+      </button>
       </div>
+      <p className='popular'>Popular</p>
+      <p className='now'>now</p>
+    </div>
+
+    <div className='promobox flex justify-center ml-14 mt-48'>
+    </div>
+<ul className='menu'>
+  <li><a href='lemontea'>
+  <div></div></a></li>
+  <li><a href='vanilla'>
+  <div></div></a></li>
+  <li><a href='hazelnut'>
+  <div></div></a></li>
+</ul>
     </div>
     </body>
     </div>
