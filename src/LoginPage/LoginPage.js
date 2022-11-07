@@ -1,7 +1,7 @@
 import React from "react";
 import './LoginPage.css';
 import {useContext} from 'react';
-import { Link, useNavigate } from ' react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 
 
@@ -29,7 +29,7 @@ function LandingPage(){
     alert('Login Gagal. username atau password salah!');
     else
     {
-        Context.setPengguna(cek_login); 
+        Context.setPengguna(cek_login);
         navigasi('/');
     }
     }
