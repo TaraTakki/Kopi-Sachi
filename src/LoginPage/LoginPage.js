@@ -30,7 +30,7 @@ function LandingPage(){
     else
     {
         Context.setPengguna(cek_login);
-        navigasi('/');
+        navigasi('/Landing');
     }
     }
     return(

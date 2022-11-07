@@ -16,6 +16,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/login' element = {<LoginPage/>}></Route>
+          <Route path='/' element = {<LandingPage/>}></Route>
         </Routes>
       </Router>
     </AppContext.Provider>
