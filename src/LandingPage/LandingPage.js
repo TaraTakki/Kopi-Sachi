@@ -50,15 +50,15 @@ return(
     <div className='promobox flex justify-center ml-14 mt-48'>
     </div>
 <ul className='menu'>
-  <li><a href='lemontea'>
+  <li><a href='#'>
   <div>
     <img src='Rectangle 11.png' alt='lemontea' className='lemontea'></img>
     </div></a></li>
-  <li><a href='vanilla'>
+  <li><a href='#'>
   <div>
   <img src='Rectangle 11 (1).png' alt='vanilla' className='vanilla'></img>
     </div></a></li>
-  <li><a href='hazelnut'>
+  <li><a href='#'>
   <div>
   <img src='Rectangle 11 (2).png' alt='hazelnut' className='hazelnut'></img>
     </div></a></li>
