@@ -1,24 +1,24 @@
 import React from "react";
-import './LoginPage.css';
+import '../LoginPage/LoginPage.css';
 import {useContext} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
-import { Login } from "../API/Api";
+import { Login, Register } from "../API/Api";
 import { useAuthDispatch, useAuthState } from "../context/AuthContext";
 
 
-function LandingPage(){
+function RegisterPage(){
     const Context = useContext(AppContext);
     const dispatch = useAuthDispatch();
     const auth = useAuthState();
     let navigasi = useNavigate();
-    const loginClick = (e)=> {
+    const registerClick = (e)=> {
         e.preventDefault();
-        Login(dispatch, {
+        Register(dispatch, {
             email: e.target.email.value,
             password: e.target.password.value,
         }).then((data) => {
-            navigasi('/');                           
+            console.log(data);
         })
 
         // e.preventDefault();
@@ -48,19 +48,15 @@ function LandingPage(){
     }
     return(
         <div  className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full '>
-           
-            
         <div  className=' bg-[#F6EBDA] '>
             <section className="flex flex-col items-center mt-16"><img src="Group 13.png" className="responsive"/></section>
-            
-           <div className="  "><form onSubmit={loginClick} className="">
-          
+           <div className="  ">
+            <form onSubmit={registerClick} className="">  
             <div className="flex flex-col items-center"><h1 className="text-[#57170D] title text-xl font-semibold ">Login</h1></div>
                 <div className="flex flex-col items-center ">
                     <label></label>
                     <input className=' w-6/12 txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ' type="text" placeholder="Email" name="email" id="idEmail"  />
                 </div>
-
                 <div className="flex flex-col items-center ">
                     <label></label> 
                     <input className=' w-6/12 rounded-lg mt-5 p-1 txtbgcolor px-3  placeholder title font-semibold bg-[#F8D8A9] ' type="password" placeholder="Password" name="password" id="idPass" />
@@ -85,4 +81,4 @@ function LandingPage(){
     )
     }
 
-    export default LandingPage;
+    export default RegisterPage;
