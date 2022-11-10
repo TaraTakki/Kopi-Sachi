@@ -31,18 +31,9 @@ input::placeholder {
     height: auto;
   }
 
-  .login {
+.login {
     width: 10%;
     height: auto;
-  }
-
-  @font-face {
-    font-family: 'IBM Plex Sans';
-    src: local('IBM Plex Sans'), url(../fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf) format('truetype');
-  }
-  
-  .title{
-    font-family: IBM Plex Sans, serif;
   }
 
 .logosachi2{
@@ -53,11 +44,10 @@ input::placeholder {
   
   .logosachi{
   position: relative;
-  
-  
-
-
-  
-  
-
   }
+
+.pd{
+  padding-right: 5px;
+}
+
+
