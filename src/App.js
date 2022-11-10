@@ -6,20 +6,26 @@ Routes,
 Route } from 'react-router-dom';
 import LoginPage from './LoginPage/LoginPage';
 import LandingPage from './LandingPage/LandingPage';
+import { AuthProvider } from './context/AuthContext';
+import RegisterPage from './Register/Register';
+import { GuestOnly } from './Components/GuestOnly';
 
 
 export const AppContext = createContext(null);
 function App() {
   const [pengguna, setPengguna] = useState();
   return (
-    <AppContext.Provider value={{pengguna, setPengguna }}>
-      <Router>
-        <Routes>
-          <Route exact path='/login' element = {<LoginPage/>}></Route>
-          <Route path='/' element = {<LandingPage/>}></Route>
-        </Routes>
-      </Router>
-    </AppContext.Provider>
+    <AuthProvider>
+      <AppContext.Provider value={{pengguna, setPengguna }}>
+        <Router>
+          <Routes>
+            <Route exact path='/login' element = {<GuestOnly><LoginPage /></GuestOnly>}></Route>
+            <Route path='/' element = {<LandingPage/>}></Route>
+            <Route path='/register' element= {<GuestOnly><RegisterPage></RegisterPage></GuestOnly>}></Route>
+          </Routes>
+        </Router>
+      </AppContext.Provider>
+    </AuthProvider>
   );
 }
 
