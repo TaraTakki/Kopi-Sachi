@@ -28,6 +28,11 @@ return(
 </a>
     </div>
     <div>
+      <div className='flex justify-end mr-8 -my-8 mx '>
+      {/* <div className='deco'>
+        <p>Cappucino</p>
+      </div> */}
+      </div>
       <img src='Group 6.png' alt='kopibg' className='kopibg'></img>
       <img src='Ellipse 2.png' alt='kopi' className='kopi'></img>
       <div className='tagline'>
