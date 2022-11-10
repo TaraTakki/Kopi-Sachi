@@ -55,7 +55,7 @@ function LandingPage(){
             
            <div className="  "><form onSubmit={loginClick} className="">
           
-            <div className="flex flex-col items-center"><h1 className="text-[#57170D] title text-xl font-semibold ">Login</h1></div>
+            <div className="flex flex-col items-center "><h1 className="text-[#57170D] title text-xl font-semibold ">Login</h1></div>
                 <div className="flex flex-col items-center ">
                     <label></label>
                     <input className=' w-6/12 txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ' type="text" placeholder="Email" name="email" id="idEmail"  />
@@ -67,15 +67,18 @@ function LandingPage(){
                 </div>
 
                 <div className="flex flex-col items-center mt-5 "><button class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title">Submit</button></div>
-            
+                <a href='/register' class='font-semibold title flex flex-col items-center'>
+            Sign Up
+        </a>
             </form>
             </div> 
 
         </div>
         <div className='hidden sm:block'>
             
-                <img className=' object-cover logosachi2' src="background.png" alt=""/>
+                <img className=' object-cover logosachi2 ' src="bg.png" alt=""/>
                 {/* <section className="flex justify-center"><img className="logosachi w-6/12 h-6/12 " src="Group 5.png" alt=""/></section> */}
+                <p className='logosachi flex flex-col items-center'>Copyright @ 2022</p> 
             </div>
 
             
