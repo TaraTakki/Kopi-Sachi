@@ -74,8 +74,8 @@ function LandingPage(){
         </div>
         <div className='hidden sm:block'>
             
-                <img className='w-full h-full object-cover logosachi2' src="background.png" alt=""/>
-                <section className="flex justify-center"><img className="logosachi w-6/12 h-6/12 " src="Group 5.png" alt=""/></section>
+                <img className=' object-cover logosachi2' src="background.png" alt=""/>
+                {/* <section className="flex justify-center"><img className="logosachi w-6/12 h-6/12 " src="Group 5.png" alt=""/></section> */}
             </div>
 
             
