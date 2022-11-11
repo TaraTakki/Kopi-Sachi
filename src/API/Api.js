@@ -49,3 +49,9 @@ export const Logout = async (dispatch) => {
     dispatch({type: 'LOGOUT'})
     
 }
+
+// export const insertMenu = async (data) => {
+//     const { data, error } = await supabase
+//     .from('menu')
+//     .insert(data)
+// }
