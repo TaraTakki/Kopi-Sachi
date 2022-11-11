@@ -68,6 +68,7 @@ function LandingPage(){
                                     <label></label> 
                                     <input className=' w-6/12 rounded-lg mt-5 p-1 txtbgcolor px-3  placeholder title font-semibold bg-[#F8D8A9] ' type="password" placeholder="Password" name="password" id="idPass" />
                                 </div>
+                                <div className="flex flex-col items-center mt-5 "><button class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title text-[16px]">Submit</button></div>
             {/* <div className="flex flex-row justify-center "> 
                 <div className=''>
                 <p class='font-semibold title flex flex-col items-center pd text-[#FF902A] text-[16px]'> 
@@ -80,7 +81,7 @@ function LandingPage(){
                         </form>
                     </div> 
                 {/* Tombol Submit */}
-                <div className="flex flex-col items-center mt-5 "><button class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title text-[16px]">Submit</button></div>   
+                   
             {/* Forgot Passwordnya */}
             <div>
                 <a href="" className="font-semibold title flex flex-col items-center text-[#433416] text-[16px]">Forgot Password</a>
