@@ -77,9 +77,9 @@ return(
       <p>with a glass of coffee in the morning</p>
       </div>
       <div className='flex justify-start ml-20 my-5'>
-      <button class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
+      <a href='#' class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
       More menu
-      </button>
+      </a>
       </div>
       <p className='popular'>Popular</p>
       <p className='now'>now</p>
@@ -91,27 +91,94 @@ return(
   <li><a href='#'>
   <div>
     <img src='Rectangle 11.png' alt='lemontea' className='lemontea'></img>
-    <p className='productname'>Lemon Tea</p>
-    <p className='price'>8k</p>
+    <text className='productname'>Lemon Tea</text>
+    <text className='price'>8K</text>
     </div></a></li>
   <li><a href='#'>
   <div>
   <img src='Rectangle 11 (1).png' alt='vanilla' className='vanilla'></img>
-  <p className='productname'>Vanilla Late</p>
+  <text className='productname'>Vanilla Late</text>
+  <text className='price'>21K</text>
     </div></a></li>
   <li><a href='#'>
   <div>
   <img src='Rectangle 11 (2).png' alt='hazelnut' className='hazelnut'></img>
-  <p className='productname'>Hazelnut Late</p>
+  <text className='productname'>Hazelnut Late</text>
+  <text className='price'>23K</text>
     </div></a></li>
 </ul>
 <img src='Rectangle 16.png' className='aboutimg'></img>
 <div className='about'>
-  <p className='abouttext1'>About us</p>
+  <text className='abouttext1'>About us</text>
   <p className='abouttext2'>We provide quality coffee that ready to be delivered</p>
-  <text style={{maxWidth:200}}>.{'We are a company that makes and distributes delicious drinks\n Our main products are'} </text>
+  {/* <text style={{maxWidth:200}}>.{'We are a company that makes and distributes delicious drinks\n Our main products are'} </text> */}
+  <a href='#' class="menubutton bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
+      Get your coffee
+      </a>
 </div>
-<div className='specialmenu'></div>
+<text className='specialmenutitle'>Special Menu For You</text>
+<div className='specialmenu'>
+  <ul className='menu'>
+    <li>
+      <a href='#'>
+        <div>
+          <img src='Rectangle 27.png' alt='Cruffle'></img>
+          <text className='productname'>Cruffle</text>
+          <text className='price'>15K</text>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href='#'>
+        <div>
+        <img src='Rectangle 29.png' alt='Cappucino'></img>
+        <text className='productname'>Cappucino</text>
+        <text className='price'>20K</text>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href='#'>
+        <div>
+        <img src='Rectangle 31.png' alt='Moccacino'></img>
+        <text className='productname'>Moccacino</text>
+        <text className='price'>20K</text>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+<div className='specialmenu2'>
+  <ul className='menu'>
+    <li>
+      <a href='#'>
+        <div>
+          <img src='Rectangle 35.png' alt='BlackCoffee'></img>
+          <text className='productname'>Black Coffee</text>
+          <text className='price'>12K</text>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href='#'>
+        <div>
+        <img src='Rectangle 36.png' alt='DalgonaCoffee'></img>
+        <text className='productname'>Dalgona Coffee</text>
+        <text className='price'>15K</text>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href='#'>
+        <div>
+        <img src='Rectangle 37.png' alt='ThaiTea'></img>
+        <text className='productname'>Thai Tea</text>
+        <text className='price'>15K</text>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
     </div>
     </div>
 )
