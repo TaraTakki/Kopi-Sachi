@@ -33,7 +33,13 @@ return(
     <section className='flex justify-center my'><div className='navbar'>
     <ul>
     <li><a href="#">Home Page</a></li>
-    <li><a href="#">Menu</a></li>
+    <li className='MenuNav'><a href="#">Menu
+    <div className='dropdowncontent'>
+                <a href='#'>Food</a>
+                <a href='#'>Beverage</a>
+                <a href='#'>Snack</a>
+    </div>
+    </a></li>
     <li><a href="#">Promo</a></li>
     <li><a href="#">Location</a></li>
   </ul>
@@ -79,22 +85,33 @@ return(
       <p className='now'>now</p>
     </div>
 
-    <div className='promobox flex justify-center ml-14 mt-48'>
+    <div className='promobox gatau'>
     </div>
 <ul className='menu'>
   <li><a href='#'>
   <div>
     <img src='Rectangle 11.png' alt='lemontea' className='lemontea'></img>
+    <p className='productname'>Lemon Tea</p>
+    <p className='price'>8k</p>
     </div></a></li>
   <li><a href='#'>
   <div>
   <img src='Rectangle 11 (1).png' alt='vanilla' className='vanilla'></img>
+  <p className='productname'>Vanilla Late</p>
     </div></a></li>
   <li><a href='#'>
   <div>
   <img src='Rectangle 11 (2).png' alt='hazelnut' className='hazelnut'></img>
+  <p className='productname'>Hazelnut Late</p>
     </div></a></li>
 </ul>
+<img src='Rectangle 16.png' className='aboutimg'></img>
+<div className='about'>
+  <p className='abouttext1'>About us</p>
+  <p className='abouttext2'>We provide quality coffee that ready to be delivered</p>
+  <text style={{maxWidth:200}}>.{'We are a company that makes and distributes delicious drinks\n Our main products are'} </text>
+</div>
+<div className='specialmenu'></div>
     </div>
     </div>
 )
