@@ -8,7 +8,7 @@ import { useAuthDispatch, useAuthState } from "../context/AuthContext";
 import '../Components/components.css';
 
 
-function LandingPage(){
+function LoginPage(){
     const Context = useContext(AppContext);
     const dispatch = useAuthDispatch();
     const auth = useAuthState();
@@ -18,18 +18,9 @@ function LandingPage(){
         Login(dispatch, {
             email: e.target.email.value,
             password: e.target.password.value,
-        }).then((data) => {
-            
-            navigasi('/');              
-            // alert('Email: '+u+ '\nPassword: '+p)
-
-        // if(cek_login.username === undefined)
-        // alert('Login Gagal. username atau password salah!');
-        // else
-        // {
-        //     Context.setPengguna(cek_login);
-        //     navigasi('/');
-        // }             
+        })
+        .then(() => {}).catch((err) => {
+            console.log(err.message);
         })
 
         // e.preventDefault();
@@ -109,4 +100,4 @@ function LandingPage(){
     )
     }
 
-    export default LandingPage;
+    export default LoginPage;
