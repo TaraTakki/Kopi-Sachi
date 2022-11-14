@@ -9,6 +9,7 @@ import LandingPage from './LandingPage/LandingPage';
 import { AuthProvider } from './context/AuthContext';
 import RegisterPage from './Register/Register';
 import { GuestOnly } from './Components/GuestOnly';
+import MenuPage from './Menu/menuPage';
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route exact path='/login' element = {<GuestOnly><LoginPage /></GuestOnly>}></Route>
             <Route path='/' element = {<LandingPage/>}></Route>
             <Route path='/register' element= {<GuestOnly><RegisterPage></RegisterPage></GuestOnly>}></Route>
+            <Route path='/menu' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
           </Routes>
         </Router>
       </AppContext.Provider>

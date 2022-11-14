@@ -19,7 +19,16 @@ function LandingPage(){
             email: e.target.email.value,
             password: e.target.password.value,
         }).then((data) => {
-            navigasi('/');                           
+                       
+            alert('Email: ')
+
+        if(email === undefined)
+        alert('Login Gagal. username atau password salah!');
+        else
+        {
+            Context.setPengguna();
+            navigasi('/');
+        }             
         })
 
         // e.preventDefault();

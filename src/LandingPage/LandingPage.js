@@ -47,7 +47,7 @@ return(
     </section>
     <div className='flex justify-end mr-8 -my-8 mx'>
       {auth.data.session ? <>
-        <h1>{auth.data.user.email}</h1>
+        {/* <h1>{auth.data.user.email}</h1> */}
         <button onClick={handleLogout}  class="bg-transparent mr-3 hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
             Logout
         </button>
