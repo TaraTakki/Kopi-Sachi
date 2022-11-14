@@ -19,16 +19,17 @@ function LandingPage(){
             email: e.target.email.value,
             password: e.target.password.value,
         }).then((data) => {
-                       
-            alert('Email: ')
+            
+            navigasi('/');              
+            // alert('Email: '+u+ '\nPassword: '+p)
 
-        if(email === undefined)
-        alert('Login Gagal. username atau password salah!');
-        else
-        {
-            Context.setPengguna();
-            navigasi('/');
-        }             
+        // if(cek_login.username === undefined)
+        // alert('Login Gagal. username atau password salah!');
+        // else
+        // {
+        //     Context.setPengguna(cek_login);
+        //     navigasi('/');
+        // }             
         })
 
         // e.preventDefault();
