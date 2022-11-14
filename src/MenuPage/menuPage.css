@@ -2,7 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-.background{
+.menubackground{
     background-color: #F6EBDA;
+    position: absolute; 
     height: 3945px;
-  }
+    width: 100%;
+}
+.menutitle{
+    font-size: 45px;
+    font-weight: bold;
+    color: #2F2105;
+    margin-left: 10%;
+}
+.part1{
+    margin-top: 5%;
+}
+.part2{
+    margin-top: 30%;
+}
+.food{
+    margin-top: 30%;
+}
+.Tea{
+    margin-top: 30%;
+}

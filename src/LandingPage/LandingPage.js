@@ -78,9 +78,9 @@ return(
       <p>with a glass of coffee in the morning</p>
       </div>
       <div className='flex justify-start ml-20 my-5'>
-      <button onClick={menuPage} class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
+      <a href='/menu' class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
       More menu
-      </button>
+      </a>
       </div>
       <p className='popular'>Popular</p>
       <p className='now'>now</p>
@@ -90,7 +90,7 @@ return(
 <ul className='menu'>
   <li><a href='#'>
   <div>
-    <img src='Rectangle 11.png' alt='lemontea' className='lemontea'></img>
+    <img src='Rectangle 78.png' alt='lemontea' className='lemontea'></img>
     <text className='productname'>Lemon Tea</text>
     <text className='price'>8K</text>
     </div></a></li>

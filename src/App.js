@@ -9,7 +9,7 @@ import LandingPage from './LandingPage/LandingPage';
 import { AuthProvider } from './context/AuthContext';
 import RegisterPage from './Register/Register';
 import { GuestOnly } from './Components/GuestOnly';
-import MenuPage from './Menu/menuPage';
+import MenuPage from './MenuPage/menuPage';
 
 
 
@@ -27,7 +27,7 @@ function App() {
 
             <Route path='/menu' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
 
-            <Route path='/register' element= {<GuestOnly><menuPage></menuPage></GuestOnly>}></Route>
+            <Route path='/register' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
 
           </Routes>
         </Router>
