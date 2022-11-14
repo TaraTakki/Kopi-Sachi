@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Logout } from '../API/Api';
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
+import menuPage from '../MenuPage/menuPage';
 import './LandingPage.css'
 
 function LandingPage(){
@@ -77,9 +78,9 @@ return(
       <p>with a glass of coffee in the morning</p>
       </div>
       <div className='flex justify-start ml-20 my-5'>
-      <a href='#' class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
+      <button onClick={menuPage} class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
       More menu
-      </a>
+      </button>
       </div>
       <p className='popular'>Popular</p>
       <p className='now'>now</p>
@@ -182,9 +183,7 @@ return(
 <ul>
   <li>
       <img src='Rectangle 45.png' alt='Cobuz'></img>
-      <div className='review'>
-        
-      </div>
+      <div className='review'></div>
   </li>
   <li>
       <img src='Rectangle 39.png' alt='Cobuz'></img>

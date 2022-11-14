@@ -247,6 +247,7 @@ margin-top: 25px;
   margin-left: 5%;
 }
 .reviewbox img{
+  position: relative;
   margin-left: 150%;
 }
 .review{
@@ -256,5 +257,5 @@ margin-top: 25px;
   background: #F6EBDA;
   border-radius: 7px;
   margin-left: 29%;
-  margin-bottom: 10%;
+  margin-bottom: 50%;
 }
