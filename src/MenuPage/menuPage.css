@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background{
+    background-color: #F6EBDA;
+    height: 3945px;
+  }
