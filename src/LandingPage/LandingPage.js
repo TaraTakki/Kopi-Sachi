@@ -84,7 +84,6 @@ return(
       <p className='popular'>Popular</p>
       <p className='now'>now</p>
     </div>
-
     <div className='promobox gatau'>
     </div>
 <ul className='menu'>
@@ -178,6 +177,22 @@ return(
       </a>
     </li>
   </ul>
+</div>
+<div className='reviewbox'>
+<ul>
+  <li>
+      <img src='Rectangle 45.png' alt='Cobuz'></img>
+      <div className='review'>
+        
+      </div>
+  </li>
+  <li>
+      <img src='Rectangle 39.png' alt='Cobuz'></img>
+  </li>
+  <li>
+      <img src='Rectangle 43.png' alt='Cobuz'></img>
+  </li>
+</ul>
 </div>
     </div>
     </div>
