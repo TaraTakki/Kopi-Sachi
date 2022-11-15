@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './LoginPage.css';
 import {useContext} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -47,7 +47,17 @@ function LoginPage(){
         //     Context.setPengguna(cek_login);
         //     navigasi('/');
         // }
+
+        
     }
+    useEffect(() => {
+        if (auth.errorMessage) {
+            alert(auth.errorMessage)
+        }
+        else{
+            navigasi('/')
+        }
+    }, [])
     return(
         <div  className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full '>
             {/* Background bagian kiri */}
@@ -79,6 +89,10 @@ function LoginPage(){
             <a href='/register' class='font-semibold title flex flex-col items-center text-[#433416] text-[16px] '> 
             Register here
             </a> </div> */}
+                        {auth.errorMessage ? <>
+                            <span className="text-red-500">{auth.errorMessage}</span>    
+                                                
+                        </> : <></>}
                         </form>
                     </div> 
                 {/* Tombol Submit */}
