@@ -38,7 +38,7 @@ function ForgotPage(){
                 </div>
                 
 
-                <div className="flex flex-col items-center mt-5 "><button type="submit" class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title">Submit</button></div>
+                <div className="flex flex-col items-center mt-5 "><button type="submit" class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title">Send Email</button></div>
             
             </form>
             <div className="flex flex-row justify-center "> 
