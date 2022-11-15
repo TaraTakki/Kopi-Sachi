@@ -50,10 +50,13 @@ export const Logout = async (dispatch) => {
     
 }
 
-// export const Forgot = async (dispatch) => {
-// const { data, error } = await supabase.auth.api.resetPasswordForEmail(email)
-
-// }
+export const SendPasswordRecovery = async (email) => {
+    const { data, error } =  await supabase.auth.resetPasswordForEmail(email,{redirectTo:`${window.location.origin}/reset-password`})
+    if(error){
+        throw error;
+    }
+    return data;
+}
 
 // export const insertMenu = async (data) => {
 //     const { data, error } = await supabase

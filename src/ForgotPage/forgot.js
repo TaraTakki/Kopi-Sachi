@@ -5,12 +5,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 import { useAuthDispatch, useAuthState } from "../context/AuthContext";
 import '../Components/components.css';
+import { SendPasswordRecovery } from "../API/Api";
 
 function ForgotPage(){
     const Context = useContext(AppContext);
     const dispatch = useAuthDispatch();
     const auth = useAuthState();
     let navigasi = useNavigate();
+
+    const handleForgot = (e) => {
+        e.preventDefault()
+        SendPasswordRecovery(e.target.email.value).then((data) => {
+            console.log(data)
+        }).catch((err) => {
+            console.log('gagal');
+            console.log(err);
+        })
+    }
     
     return(
         <div  className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full '>
@@ -18,7 +29,7 @@ function ForgotPage(){
             <section className="flex flex-col items-center mt-16"><img src="Group 13.png" className="responsive"/></section>
            <div className="  ">
            
-            <form className="">
+            <form onSubmit={handleForgot} className="">
                  
             <div className="flex flex-col items-center mt-11"><h1 className="text-[#57170D] title text-xl font-semibold">Forgot Password</h1></div>
                 <div className="flex flex-col items-center mt-5 ">
@@ -27,7 +38,7 @@ function ForgotPage(){
                 </div>
                 
 
-                <div className="flex flex-col items-center mt-5 "><button class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title">Submit</button></div>
+                <div className="flex flex-col items-center mt-5 "><button type="submit" class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title">Submit</button></div>
             
             </form>
             <div className="flex flex-row justify-center "> 

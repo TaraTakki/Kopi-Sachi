@@ -14,6 +14,9 @@ import ForgotPage from './ForgotPage/forgot';
 
 
 
+
+
+
 export const AppContext = createContext(null);
 function App() {
   const [pengguna, setPengguna] = useState();
@@ -27,10 +30,9 @@ function App() {
             <Route path='/register' element= {<GuestOnly><RegisterPage></RegisterPage></GuestOnly>}></Route>
 
             <Route path='/menu' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
-
+            
             <Route path='/register' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
             <Route path='/forgot' element= {<GuestOnly><ForgotPage></ForgotPage></GuestOnly>}></Route>
-
           </Routes>
         </Router>
       </AppContext.Provider>

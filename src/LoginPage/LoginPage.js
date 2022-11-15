@@ -81,7 +81,7 @@ function LoginPage(){
                                 </div>
                                 
                                 <div className="flex flex-row justify-end">
-                <div><a href="/forgot" className="font-semibold title flex flex-col items-end text-[#433416] text-[16px] ">forgot password  ?</a></div>
+                <div><a href="/ganti" className="font-semibold title flex flex-col items-end text-[#433416] text-[16px] ">forgot password  ?</a></div>
                 <div className="w-3/12"></div>
             </div>
                                 <div className="flex flex-col items-center mt-5 "><button class="font-semibold w-6/12 h-10 px-5 m-2 text-[#F6EBDA] transition-colors duration-150 bg-[#433416] rounded-lg focus:shadow-outline hover:bg-[#433416] title text-[16px]">Submit</button></div>
