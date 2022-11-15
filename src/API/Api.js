@@ -50,6 +50,11 @@ export const Logout = async (dispatch) => {
     
 }
 
+// export const Forgot = async (dispatch) => {
+// const { data, error } = await supabase.auth.api.resetPasswordForEmail(email)
+
+// }
+
 // export const insertMenu = async (data) => {
 //     const { data, error } = await supabase
 //     .from('menu')
