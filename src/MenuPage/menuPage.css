@@ -2,7 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-.background{
+.menubackground{
     background-color: #F6EBDA;
+    position: absolute; 
     height: 3945px;
+    width: 100%;
+}
+.menutitle{
+    font-size: 45px;
+    font-weight: bold;
+    color: #2F2105;
+    margin-left: 10%;
+}
+.part1{
+    margin-top: 5%;
+}
+.part2{
+    margin-top: 30%;
+}
+.food{
+    margin-top: 30%;
+}
+.Tea{
+    margin-top: 30%;
+}
+.addmenu{
+    background: none;
+    border-width: 5px;
+    border-radius: 25px;
+    border-style: dashed;
+    border-color: #ABABAB;
+    position: absolute; 
+    width: 334px;
+    height: 346px;
+}
+.addproduct{
+    position: relative;
+    margin-left: 30%;
+    margin-top: 35%;
+}
+.popup{
+    width: 1082px;
+    height: 1331px;
+    background-color: #FFCB7C;
+    border-radius: 25px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+.menu section:hover{
+    animation-name: floating;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, -15px); }
+    100%   { transform: translate(0, -0px); }
   }
