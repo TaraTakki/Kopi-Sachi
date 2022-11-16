@@ -11,6 +11,7 @@ import RegisterPage from './Register/Register';
 import { GuestOnly } from './Components/GuestOnly';
 import MenuPage from './MenuPage/menuPage';
 import ForgotPage from './ForgotPage/forgot';
+import ForgotPage2 from './ForgotPage/forgot2';
 
 
 
@@ -31,6 +32,7 @@ function App() {
             <Route path='/menu' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
             <Route path='/register' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
             <Route path='/forgot' element= {<GuestOnly><ForgotPage></ForgotPage></GuestOnly>}></Route>
+            <Route path='/reset-password' element= {<GuestOnly><ForgotPage2></ForgotPage2></GuestOnly>}></Route>
           </Routes>
         </Router>
       </AppContext.Provider>

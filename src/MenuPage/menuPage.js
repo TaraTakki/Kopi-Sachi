@@ -1,7 +1,13 @@
 import './menuPage.css'
 import '../LandingPage/LandingPage.css'
+import { Logout } from '../API/Api'
+
+
 
 function menuPage(){
+
+    
+    
     return(
         <div>
             <div className='menubackground'>
@@ -12,24 +18,20 @@ function menuPage(){
             </section>
     <section className='flex justify-center my'><div className='navbar'>
     <ul>
-    <li><a href="#">Home Page</a></li>
-    <li className='MenuNav'><a href="#">Menu
-    <div className='dropdowncontent'>
+    <li><a href="/">Home Page</a></li>
+    <li className='MenuNav'><a href="/menu">Menu
+    {/* <div className='dropdowncontent'>
                 <a href='#'>Food</a>
                 <a href='#'>Beverage</a>
                 <a href='#'>Snack</a>
-    </div>
+    </div> */}
     </a></li>
     <li><a href="#">Promo</a></li>
     <li><a href="#">Location</a></li>
   </ul>
     </div>
     </section>
-    <div className='flex justify-end mr-8 -my-8 mx'>
-    <button class="bg-transparent mr-3 hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
-            Logout
-        </button>
-    </div>
+    
     <div className='Coffee'>
             <div className='part1'>
                 <text className='menutitle'>Coffee</text>

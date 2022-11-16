@@ -52,14 +52,41 @@ export const Logout = async (dispatch) => {
 
 export const SendPasswordRecovery = async (email) => {
     const { data, error } =  await supabase.auth.resetPasswordForEmail(email,{redirectTo:`${window.location.origin}/reset-password`})
+    
+
     if(error){
         throw error;
     }
     return data;
 }
 
-// export const insertMenu = async (data) => {
-//     const { data, error } = await supabase
-//     .from('menu')
-//     .insert(data)
-// }
+export const ResetPassword = async(formData) => {
+    
+    
+
+
+   const { data, error } = await supabase.auth.updateUser({
+  email: formData.email,
+        password: formData.password
+ })
+  
+   
+  if(error){
+    throw error;
+}
+return data;
+  
+}
+
+    // export const SelectData = async(data) => {
+    //     const { data, error } = await supabase
+    //   .from('menu')
+    //   .select()
+    // }
+
+
+    // export const insertMenu = async (data) => {
+    //     const { data, error } = await supabase
+    //     .from('menu')
+    //     .insert(data)
+    // }
