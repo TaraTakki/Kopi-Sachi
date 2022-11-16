@@ -78,15 +78,19 @@ return data;
   
 }
 
-    // export const SelectData = async(data) => {
-    //     const { data, error } = await supabase
-    //   .from('menu')
-    //   .select()
-    // }
+export const getAllMenu = async() => {
+    
+    const { data, error } = await supabase
+        .from('menu')
+        .select()
+
+    if(error){
+        throw error;
+    }
+    return data;
+
+}
 
 
-    // export const insertMenu = async (data) => {
-    //     const { data, error } = await supabase
-    //     .from('menu')
-    //     .insert(data)
-    // }
+
+

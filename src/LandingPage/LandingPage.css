@@ -165,8 +165,15 @@ margin-top: 70px;
 .productname{
   font-size: 24px;
   color: #2F2105;
-  font-weight: 600;
   margin-left: 25px;
+  
+}
+.harganame{
+  font-size: 23px;
+  color: #2F2105;
+  margin-left: 125px;
+  
+  
 }
 .price{
   font-size: 30px;
