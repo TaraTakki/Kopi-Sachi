@@ -1,6 +1,8 @@
 import './menuPage.css'
 import '../LandingPage/LandingPage.css'
 
+const menuname=[];
+
 function menuPage(){
     return(
         <div>
@@ -54,17 +56,13 @@ function menuPage(){
                     <img src='Rectangle 36.png' alt='DalgonaCoffee'></img>
                     <text className='productname'>Dalgona Coffee</text></div></a></li>
                     <li>
-                        <button type='submit' className='btn' onClick='openPopup()'><div className='addmenu'>
+                        <a><div className='addmenu'>
                             <div className='addproduct'>
                             <img src='Vector.png'></img>
                             </div>
-                            </div></button>
-                            <div className='popup' id='popup'>
-                                <div className='addform'></div>
-                            </div>
-                            <script>
-                                
-                            </script>
+
+                            </div></a>
+                            
                     </li>
                 </ul>
                 </div>
@@ -137,6 +135,17 @@ function menuPage(){
                     </li>
                         </ul>
                     </div>
+                    <div className='popup' id='popup-1'>
+                        <div className='overlay'>
+                            <div className='content'>
+                                <h1>Add Menu</h1>
+                                <form>
+                                <input type="text" id="fname" name="fname"></input>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <button onClick='showPopup()' className='addmenu'></button> */}
                 </div>
             </div>
         </div>
