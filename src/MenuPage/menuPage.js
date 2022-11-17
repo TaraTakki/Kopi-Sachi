@@ -118,11 +118,11 @@ function MenuPage(){
                     <img src='Rectangle 36.png' alt='DalgonaCoffee'></img>
                     <text className='productname'>Dalgona Coffee</text></div></a></li>
                     <li>
-                        <button type='submit' className='btn' onClick='openPopup()'><div className='addmenu'>
+                        <a href='/nambah' type='submit' className='btn' onClick='openPopup()'><div className='addmenu'>
                             <div className='addproduct'>
                             <img src='Vector.png'></img>
                             </div>
-                            </div></button>
+                            </div></a>
                             <div className='popup' id='popup'>
                                 <div className='addform'></div>
                             </div>
@@ -158,7 +158,7 @@ function MenuPage(){
                         <img src='Rectangle 69.png' alt='Lava Cake'></img>
                         <text className='productname'>Lava Cake</text></div></a></li>
                         <li>
-                        <a href='#'><section className='addmenu'>
+                        <a href='/nambah'><section className='addmenu'>
                             <section className='mt-20 ml-24 add'>
                             <img src='Vector.png' className='add'></img>
                             <text className='addproduct'>Add Product</text>

@@ -91,6 +91,20 @@ export const getAllMenu = async() => {
 
 }
 
+export const insertAllMenu = async(formData) => {
+    
+const { data, error } = await supabase
+.from('menu')
+.insert([
+  { nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi },
+])
+if(error) {
+    throw error;
+}
+return data;
+
+}
+
 
 
 
