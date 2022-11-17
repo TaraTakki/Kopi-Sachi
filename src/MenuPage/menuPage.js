@@ -1,9 +1,46 @@
 import './menuPage.css'
 import '../LandingPage/LandingPage.css'
+import { getAllMenu, Logout } from '../API/Api'
+import { useAuthDispatch, useAuthState } from '../context/AuthContext';
+import { useEffect, useState } from 'react';
 
+<<<<<<< HEAD
 const menuname=[];
 
 function menuPage(){
+=======
+
+
+function MenuPage(){
+    const auth = useAuthState();
+    const dispatch = useAuthDispatch();
+    const [menus, setMenu] = useState(null);
+
+    const handleLogout = (e) => {
+        e.preventDefault();
+        Logout(dispatch)
+        .then (()=> {
+
+        })
+    }
+
+    useEffect(() => {
+        getAllMenu().then((data) => {
+            setMenu(data)
+        }).catch((err) => {
+            console.log(err);
+        })
+        if(menus !== null){
+        }
+    }, [])
+
+    useEffect(() => {
+        console.log(menus);
+    }, [menus])
+
+    
+    
+>>>>>>> d01ae7b13d9a6a1bbd173e05042b3bebe86cc89a
     return(
         <div>
             <div className='menubackground'>
@@ -14,40 +51,71 @@ function menuPage(){
             </section>
     <section className='flex justify-center my'><div className='navbar'>
     <ul>
-    <li><a href="#">Home Page</a></li>
-    <li className='MenuNav'><a href="#">Menu
-    <div className='dropdowncontent'>
+    <li><a href="/">Home Page</a></li>
+    <li className='MenuNav'><a href="/menu">Menu
+    {/* <div className='dropdowncontent'>
                 <a href='#'>Food</a>
                 <a href='#'>Beverage</a>
                 <a href='#'>Snack</a>
-    </div>
+    </div> */}
     </a></li>
     <li><a href="#">Promo</a></li>
     <li><a href="#">Location</a></li>
+    
   </ul>
+  
     </div>
     </section>
     <div className='flex justify-end mr-8 -my-8 mx'>
-    <button class="bg-transparent mr-3 hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
+      {auth.data.session ? <>
+        {/* <h1>{auth.data.user.email}</h1> */}
+        <button onClick={handleLogout}  class="bg-transparent mr-3 hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
             Logout
         </button>
+      </> : <>
+        <a href='/register' class="bg-transparent mr-3 hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
+            Sign Up
+        </a>
+        <a href='/login' class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full">
+          Log In
+        </a>
+      </>}
     </div>
+    
     <div className='Coffee'>
             <div className='part1'>
                 <text className='menutitle'>Coffee</text>
                 <ul className='menu'>
-                    <li><a href='#'><div className='menubox'>
-                        <img src='Rectangle 54.png'></img>
-                        <text className='productname'>Coffee</text></div></a></li>
-                    <li><a href='#'><div className='menubox'>
-                    <img src='Rectangle 29.png' alt='Cappucino'></img>
-                        <text className='productname'>Cappucino</text></div></a></li>
-                    <li><a href='#'><div className='menubox'>
-                    <img src='Rectangle 31.png' alt='Moccacino'></img>
-                        <text className='productname'>Moccacino</text></div></a></li>
+                    {menus !== null ? <>
+                        {menus.map((menu) => {
+                            return <>
+                                <li>
+                                    <a href='#'><div className='menubox'>
+                                    <img src='Rectangle 54.png'></img>
+                                    <div><text className='title font-semibold text-[24px] text-[#2F2105] pl-6'>{menu.nama}</text>
+                                    <text className='title font-semibold text-[23px] text-[#2F2105] pl-28'>{menu.harga}K</text></div>
+                                    <text className='font-medium text-[#878581] font text-[15px] pl-6'>{menu.deskripsi}</text>
+                                    </div></a>
+                                </li>
+                               
+                            </>
+                        })}
+                    </> : <>
+                        No Product
+                    </>}
+                    {/* <li>
+                        <a href='#'><div className='menubox'>
+                        <img src='Rectangle 29.png' alt='Cappucino'></img>
+                        <text className='productname'>Cappucino</text></div></a>
+                    </li>
+                    <li>
+                        <a href='#'><div className='menubox'>
+                        <img src='Rectangle 31.png' alt='Moccacino'></img>
+                        <text className='productname'>Moccacino</text></div></a>
+                    </li> */}
                 </ul>
-                </div>
-                <div className='part2'>
+            </div>
+            <div className='part2'>
                 <ul className='menu'>
                     <li><a href='#'><div className='menubox'>
                     <img src='Rectangle 35.png' alt='BlackCoffee'></img>
@@ -65,8 +133,8 @@ function menuPage(){
                             
                     </li>
                 </ul>
-                </div>
-                </div>
+            </div>
+    </div>
                 <div className='food'>
                     <text className='menutitle'>Food</text>
                     <div className='part1'>
@@ -92,7 +160,7 @@ function menuPage(){
                         <img src='Rectangle 69.png' alt='Lava Cake'></img>
                         <text className='productname'>Lava Cake</text></div></a></li>
                         <li>
-                        <a href='#'><section className='addmenu'>
+                        <a href='/nambah'><section className='addmenu'>
                             <section className='mt-20 ml-24 add'>
                             <img src='Vector.png' className='add'></img>
                             <text className='addproduct'>Add Product</text>
@@ -151,4 +219,4 @@ function menuPage(){
         </div>
     )
 }
-export default menuPage;
+export default MenuPage;

@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { Logout } from '../API/Api';
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
-import menuPage from '../MenuPage/menuPage';
 import './LandingPage.css'
 
-function LandingPage(){
 
+function LandingPage(){
   const auth = useAuthState();
   const dispatch = useAuthDispatch();
+
+  
 
   // useEffect(() => {
   //   console.log(auth);
@@ -33,13 +34,13 @@ return(
             </section>
     <section className='flex justify-center my'><div className='navbar'>
     <ul>
-    <li><a href="#">Home Page</a></li>
-    <li className='MenuNav'><a href="#">Menu
-    <div className='dropdowncontent'>
+    <li><a href="/">Home Page</a></li>
+    <li className='MenuNav'><a href="/menu">Menu
+    {/* <div className='dropdowncontent'>
                 <a href='#'>Food</a>
                 <a href='#'>Beverage</a>
                 <a href='#'>Snack</a>
-    </div>
+    </div> */}
     </a></li>
     <li><a href="#">Promo</a></li>
     <li><a href="#">Location</a></li>

@@ -50,8 +50,61 @@ export const Logout = async (dispatch) => {
     
 }
 
-// export const insertMenu = async (data) => {
-//     const { data, error } = await supabase
-//     .from('menu')
-//     .insert(data)
-// }
+export const SendPasswordRecovery = async (email) => {
+    const { data, error } =  await supabase.auth.resetPasswordForEmail(email,{redirectTo:`${window.location.origin}/reset-password`})
+    
+
+    if(error){
+        throw error;
+    }
+    return data;
+}
+
+export const ResetPassword = async(formData) => {
+    
+    
+
+
+   const { data, error } = await supabase.auth.updateUser({
+  email: formData.email,
+        password: formData.password
+ })
+  
+   
+  if(error){
+    throw error;
+}
+return data;
+  
+}
+
+export const getAllMenu = async() => {
+    
+    const { data, error } = await supabase
+        .from('menu')
+        .select()
+
+    if(error){
+        throw error;
+    }
+    return data;
+
+}
+
+export const insertAllMenu = async(formData) => {
+    
+const { data, error } = await supabase
+.from('menu')
+.insert([
+  { nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi },
+])
+if(error) {
+    throw error;
+}
+return data;
+
+}
+
+
+
+

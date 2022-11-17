@@ -10,6 +10,12 @@ import { AuthProvider } from './context/AuthContext';
 import RegisterPage from './Register/Register';
 import { GuestOnly } from './Components/GuestOnly';
 import MenuPage from './MenuPage/menuPage';
+import ForgotPage from './ForgotPage/forgot';
+import ForgotPage2 from './ForgotPage/forgot2';
+import InsertPage from './insert/insert';
+
+
+
 
 
 
@@ -24,11 +30,11 @@ function App() {
             <Route exact path='/login' element = {<GuestOnly><LoginPage /></GuestOnly>}></Route>
             <Route path='/' element = {<LandingPage/>}></Route>
             <Route path='/register' element= {<GuestOnly><RegisterPage></RegisterPage></GuestOnly>}></Route>
-
-            <Route path='/menu' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
-
+            <Route path='/menu' element= {<MenuPage></MenuPage>}></Route>
             <Route path='/register' element= {<GuestOnly><MenuPage></MenuPage></GuestOnly>}></Route>
-
+            <Route path='/forgot' element= {<GuestOnly><ForgotPage></ForgotPage></GuestOnly>}></Route>
+            <Route path='/reset-password' element= {<ForgotPage2></ForgotPage2>}></Route>
+            <Route path='/nambah' element={<InsertPage></InsertPage>}></Route>
           </Routes>
         </Router>
       </AppContext.Provider>
