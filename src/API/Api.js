@@ -114,7 +114,7 @@ const { data, error } = await supabase
 
 }
 
-export const DeleteOneMenu = async() => {
+export const DeleteAllMenu = async() => {
     
 const { data, error } = await supabase
 .from('menu')
