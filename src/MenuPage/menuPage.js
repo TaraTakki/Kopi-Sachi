@@ -55,9 +55,9 @@ function menuPage(){
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             return <>
-                                {/* <li>
+                                <li>
                                     <a href='#'><div className='menubox'>
-                                    <img src='Rectangle 54.png'></img>
+                                    <img src={menu.gambar}></img>
                                     <div><text className='title font-semibold text-[24px] text-[#2F2105] pl-6'>{menu.nama}</text>
                                     <text className='title font-semibold text-[23px] text-[#2F2105] pl-28'>{menu.harga}K</text></div>
                                     <text className='font-medium text-[#878581] font text-[15px] pl-6'>{menu.deskripsi}</text>
@@ -65,19 +65,8 @@ function menuPage(){
                                     </div></a>
                                     
                                     
-                                </li> */}
-                                <li>
-                                <div class="overflow-hidden shadow-lg mx-3 bg-white pr-10 menuboxz ">
-  <img class="w-full" src={menu.gambar} alt=""/>
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">{menu.nama}</div>
-    <p class="text-gray-700 text-base">
-      {menu.deskripsi}
-    </p>
-    <a href='/edit'>edit</a>
-  </div>
-  
-</div></li>
+                                </li>
+                               
                                 
                                
                             </>
