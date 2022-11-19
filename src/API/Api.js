@@ -123,4 +123,20 @@ const { data, error } = await supabase
 
 }
 
+export const CreateBucket = async() => {
+    const { data, error } = await supabase
+  .storage
+  .createBucket('avatars', { public: false })
+}
+
+export const GetBucket = async() => {
+    const { data, error } = await supabase
+  .storage
+  .getBucket('gambar')
+  if(error) {
+    throw error;
+}
+return data;
+}
+
 

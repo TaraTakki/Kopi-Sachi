@@ -31,6 +31,8 @@ function MenuPage(){
         console.log(menus);
     }, [menus])
 
+    
+
 
     return(
         <div>
