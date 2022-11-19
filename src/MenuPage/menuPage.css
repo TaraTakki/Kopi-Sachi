@@ -42,7 +42,7 @@
 .popup{
 position: absolute;
 width: 50%;
-height: 20%;
+height: 25%;
 border-color: #2F2105;
 border-radius: 25px;
 border-width: 2px;
@@ -59,10 +59,60 @@ background-color: #FFCB7C;
     border-color: #2F2105;
     border-width: 2px;
     width: 90%;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #F8D8A9;
 }
-.menu section:hover{
+.formtitle{
+    font-size: 30px;
+    font-weight: bold;
+    color: #2F2105;
+    margin-left: 5%;
+}
+input{
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    font-size: 25px;
+    background-color: #F8D8A9;
+    color: #2F2105;
+    font-weight: 500;
+}
+select{
+    font-size: 30px;
+    font-weight: bold;
+    color: #2F2105;
+    margin-left: 5%;
+    background-color: #F8D8A9;
+    outline: none;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: #2F2105;
+    width: 90%;
+}
+.uploadimg{
+    margin-left: 5%;
+    width: 90%;
+    height: 200px;
+    border-width: 2px;
+    border-color: #2F2105;
+    border-style: dashed;
+    border-radius: 8px;
+    background-color: #F8D8A9;
+}
+.uploadimg img{
+    display: flex;
+    margin-left: 40%;
+    margin-top: 8%;
+    width: 100px;
+}
+.submitbutton{
+    width: 90%;
+    height: 70px;
+    background-color: #2F2105;
+    border-radius: 5px;
+    font-size: 30px;
+}
+.menu div:hover{
     animation-name: floating;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
