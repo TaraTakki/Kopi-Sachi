@@ -162,10 +162,8 @@ margin-top: 70px;
 .productname{
   font-size: 24px;
   color: #2F2105;
-<<<<<<< HEAD
   font-weight: 600;
   margin-left: 10%;
-=======
   margin-left: 25px;
   
 }
@@ -174,8 +172,6 @@ margin-top: 70px;
   color: #2F2105;
   margin-left: 125px;
   
-  
->>>>>>> d01ae7b13d9a6a1bbd173e05042b3bebe86cc89a
 }
 .price{
   font-size: 30px;

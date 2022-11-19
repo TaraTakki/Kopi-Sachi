@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 const menuname=[];
 
-function menuPage(){
+// function menuPage(){
 
 
 function MenuPage(){
@@ -144,7 +144,6 @@ function MenuPage(){
                             </div>
                             <script>
                             </script>
-=======
                             
                     </li>
                 </ul>
@@ -233,5 +232,7 @@ function MenuPage(){
             </div>
         </div>
     )
-}}
+}
+
+
 export default MenuPage;
