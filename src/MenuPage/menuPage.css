@@ -41,13 +41,36 @@
 }
 .popup{
 position: absolute;
+top: 30%;
+left: 50%;
 width: 50%;
-height: 25%;
+height: 27%;
 border-color: #2F2105;
 border-radius: 25px;
 border-width: 2px;
 background-color: #FFCB7C;
+transform: translate(-50%, -50%) scale(0);
 }
+.popup .overlay{
+display: none;
+}
+.popup.active .overlay{
+    display: block;
+}
+.popup .close-btn{
+    position: absolute;
+    right: 30px;
+    top: 7px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.popup.closed{
+    transition: all 300ms ease-in-out;
+transform: translate(-50%, -50%) scale(0);
+}
+.popup.active{
+transition: all 300ms ease-in-out;
+transform: translate(-50%, -50%) scale(1);}
 .popup h1{
     color: #2F2105;
     font-size: 45px;
@@ -111,6 +134,10 @@ select{
     background-color: #2F2105;
     border-radius: 5px;
     font-size: 30px;
+    color: #F6EBDA;
+    font-weight: 600;
+    margin-left: 5%;
+    margin-top: 5%;
 }
 .menu div:hover{
     animation-name: floating;
