@@ -17,6 +17,9 @@ function MenuPage(){
   
       })
     }
+    function togglePopup(){
+        document.getElementById('popup-1').classList.toggle('active')
+    }
     useEffect(() => {
         getAllMenu().then((data) => {
             setMenu(data)
@@ -88,18 +91,23 @@ function MenuPage(){
                                     <p className='productdesc'>{menu.deskripsi}</p>
                                     </div></a>
                                 </li>
-                                {/* <li>
-                        <a><div className='addmenu'>
-                            <div className='addproduct'>
-                            <img src='Vector.png'></img>
-                            </div>
-                            </div></a>
-                    </li> */}
+                                
                             </>
                         })}
                     </> : <>
                         No Product
                     </>}
+                    <li>
+                        <button  onClick={togglePopup}><div className='addmenu'>
+                            <div className='addproduct'>
+                            <img src='Vector.png'></img>
+                            </div>
+                            </div></button>
+                            <script>
+                        
+                    </script>
+                    </li>
+                    
                     {/* <li>
                         <a href='#'><div className='menubox'>
                         <img src='Rectangle 29.png' alt='Cappucino'></img>
@@ -185,15 +193,16 @@ function MenuPage(){
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
                             <div className='content'>
+                                <button onClick={togglePopup} className='close-btn'>X</button>
                                 <h1>Add Menu</h1>
-                                <text className='formtitle'>Product type</text>
+                                {/* <text className='formtitle'>Product type</text>
                                 <div>
                                     <select name='producttype'>
                                         <option value='Coffee'>Coffee</option>
                                         <option value='Food'>Food</option>
                                         <option value='Tea'>Tea</option>
                                     </select>
-                                    </div>
+                                    </div> */}
                                 <text className='formtitle'>Name</text>
                                 <form>
                                 <input type="text" id="fname" name="fname"></input>
