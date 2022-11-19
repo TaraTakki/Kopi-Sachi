@@ -83,17 +83,18 @@ function MenuPage(){
                                 <li>
                                     <a href='#'><div className='menubox'>
                                     <img src={menu.gambar}></img>
-                                    <div><text className='title font-semibold text-[24px] text-[#2F2105] pl-6'>{menu.nama}</text>
-                                    <text className='title font-semibold text-[23px] text-[#2F2105] pl-28'>{menu.harga}K</text></div>
-                                    <text className='font-medium text-[#878581] font text-[15px] pl-6'>{menu.deskripsi}</text>
-                                    
+                                    <div><text className='productname'>{menu.nama}</text>
+                                    <text className='price'>{menu.harga}K</text></div>
+                                    <p className='productdesc'>{menu.deskripsi}</p>
                                     </div></a>
-                                    
-                                    
                                 </li>
-                               
-                                
-                               
+                                {/* <li>
+                        <a><div className='addmenu'>
+                            <div className='addproduct'>
+                            <img src='Vector.png'></img>
+                            </div>
+                            </div></a>
+                    </li> */}
                             </>
                         })}
                     </> : <>
@@ -111,26 +112,7 @@ function MenuPage(){
                     </li> */}
                 </ul>
             </div>
-            <div className='part2'>
-                <ul className='menu'>
-                    
-                    <li>
-                        <a><div className='addmenu'>
-                            <div className='addproduct'>
-                            <img src='Vector.png'></img>
-                            </div>
-
-                            </div></a>
-
-                            <div className='popup' id='popup'>
-                                <div className='addform'></div>
-                            </div>
-                            <script>
-                            </script>
-                            
-                    </li>
-                </ul>
-            </div>
+            
     </div>
                 <div className='food'>
                     <text className='menutitle'>Food</text>
@@ -204,9 +186,31 @@ function MenuPage(){
                         <div className='overlay'>
                             <div className='content'>
                                 <h1>Add Menu</h1>
+                                <text className='formtitle'>Product type</text>
+                                <div>
+                                    <select name='producttype'>
+                                        <option value='Coffee'>Coffee</option>
+                                        <option value='Food'>Food</option>
+                                        <option value='Tea'>Tea</option>
+                                    </select>
+                                    </div>
+                                <text className='formtitle'>Name</text>
                                 <form>
                                 <input type="text" id="fname" name="fname"></input>
                                 </form>
+                                <text className='formtitle'>Description</text>
+                                <form>
+                                <input type="text" id="fname" name="fname"></input>
+                                </form>
+                                <text className='formtitle'>Price</text>
+                                <form>
+                                <input type="text" id="fname" name="fname"></input>
+                                </form>
+                                <text className='formtitle'>Image</text>
+                                <div className='uploadimg'>
+                                    <img src='Group 34.png'></img>
+                                </div>
+                                <button type='submit' className='submitbutton'>Submit</button>
                             </div>
                         </div>
                     </div>

@@ -120,6 +120,7 @@ margin-top: 70px;
   background: #FFFFFF;
   box-shadow: 0px 15px 25px #646464;
   border-radius: 25px;
+  padding-top: 3%;
 }
 
 .menuboxz{
@@ -173,10 +174,18 @@ margin-top: 70px;
   margin-left: 125px;
 }
 .price{
+  position: absolute;
   font-size: 30px;
   color: #2F2105;
   font-weight: bold;
-  text-align-last: right;
+  right: 10%;
+}
+.productdesc{
+  margin-top: 5%;
+  font-size: 15px;
+  color: #878581;
+  font-weight: 600;
+  margin-left: 7%;
 }
 .about{
   margin-top: 30%;
