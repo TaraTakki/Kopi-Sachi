@@ -2,7 +2,7 @@
 
 .background{
   background-color: #F6EBDA;
-  height: 3945px;
+  height: auto;
 }
 .Logo{
   position: absolute;
@@ -99,20 +99,22 @@ margin-top: 70px;
   background: #F8D8A9;
 }
 .menu{
-  justify-content: space-between;
-  display: flex;
-  padding-right: 450px;
-  margin-left: 115px;
-  margin-top: 75px;
+  display:grid;
+  padding-right: 30%;
+  margin-left: 5%;
+  margin-top: 5%;
+  gap: 7%;
+  grid-template-columns: repeat(3, 1fr);
 }
 .menu ul{
   list-style-type: none;
 }
 .menu li{
-  display: inline-block;
+  margin-left: 5%;
+  display: inline-flex;
 }
 .menubox{
-  position: absolute; 
+  position: relative; 
   width: 334px;
   height: 346px;
   background: #FFFFFF;
@@ -137,24 +139,13 @@ margin-top: 70px;
 }
 
 .menu img{
-  margin-left: 19px;
-  margin-top: 17px;
+  position: relative;
+  margin-left: 6%;
+  margin-top: 0px;
   border-color: #9C9C9C;
   border-width: 0px;
   border-radius: 25px;
 }
-/* .lemontea{
-  margin-left: 27px;
-  margin-top: 17px;
-}
-.vanilla{
-  margin-left: 27px;
-  margin-top: 17px;
-}
-.hazelnut{
-  margin-left: 27px;
-  margin-top: 17px;
-} */
 .deco{
   border-radius: 35px;
   border-color: #2F2105;
@@ -171,6 +162,10 @@ margin-top: 70px;
 .productname{
   font-size: 24px;
   color: #2F2105;
+<<<<<<< HEAD
+  font-weight: 600;
+  margin-left: 10%;
+=======
   margin-left: 25px;
   
 }
@@ -180,6 +175,7 @@ margin-top: 70px;
   margin-left: 125px;
   
   
+>>>>>>> d01ae7b13d9a6a1bbd173e05042b3bebe86cc89a
 }
 .price{
   font-size: 30px;
@@ -188,7 +184,7 @@ margin-top: 70px;
   text-align-last: right;
 }
 .about{
-  margin-top: 45%;
+  margin-top: 30%;
   width: 100%;
   height: 352px;
   background-color: #FFCB7C;
@@ -209,7 +205,7 @@ margin-top: 70px;
 .aboutimg{
   position: absolute;
   margin-left: 75px;
-  margin-top: 40%;
+  margin-top: 25%;
 }  
 .abouttext1{
   font-size: 36px;
@@ -236,9 +232,6 @@ margin-top: 25px;
   position: absolute;
   margin-left: 450px;
   margin-top: 75px;
-}
-.specialmenu2{
-  margin-top: 29%;
 }
 .specialmenutitle{
   margin-left:9%;

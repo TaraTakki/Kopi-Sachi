@@ -5,6 +5,10 @@ import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 
 
+const menuname=[];
+
+function menuPage(){
+
 
 function MenuPage(){
     const auth = useAuthState();
@@ -33,7 +37,6 @@ function MenuPage(){
         console.log(menus);
     }, [menus])
 
-    
     
     return(
         <div>
@@ -129,16 +132,20 @@ function MenuPage(){
                 <ul className='menu'>
                     
                     <li>
-                        <a href='/nambah' type='submit' className='btn' onClick='openPopup()'><div className='addmenu'>
+                        <a><div className='addmenu'>
                             <div className='addproduct'>
                             <img src='Vector.png'></img>
                             </div>
+
                             </div></a>
+
                             <div className='popup' id='popup'>
                                 <div className='addform'></div>
                             </div>
                             <script>
                             </script>
+=======
+                            
                     </li>
                 </ul>
             </div>
@@ -211,9 +218,20 @@ function MenuPage(){
                     </li>
                         </ul>
                     </div>
+                    <div className='popup' id='popup-1'>
+                        <div className='overlay'>
+                            <div className='content'>
+                                <h1>Add Menu</h1>
+                                <form>
+                                <input type="text" id="fname" name="fname"></input>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <button onClick='showPopup()' className='addmenu'></button> */}
                 </div>
             </div>
         </div>
     )
-}
+}}
 export default MenuPage;

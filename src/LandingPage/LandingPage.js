@@ -95,7 +95,7 @@ return(
     <text className='productname'>Lemon Tea</text>
     <text className='price'>8K</text>
     </div></a></li>
-  <li><a href='#'>
+  {/* <li><a href='#'>
   <div className='menubox'>
   <img src='Rectangle 11 (1).png' alt='vanilla' className='vanilla'></img>
   <text className='productname'>Vanilla Late</text>
@@ -106,7 +106,7 @@ return(
   <img src='Rectangle 11 (2).png' alt='hazelnut' className='hazelnut'></img>
   <text className='productname'>Hazelnut Late</text>
   <text className='price'>23K</text>
-    </div></a></li>
+    </div></a></li> */}
 </ul>
 <img src='Rectangle 16.png' className='aboutimg'></img>
 <div className='about'>
@@ -146,7 +146,7 @@ return(
     </li>
   </ul>
 </div>
-<div className='specialmenu2'>
+{/* <div className='specialmenu2'>
   <ul className='menu'>
     <li>
       <a href='#'>
@@ -176,7 +176,7 @@ return(
       </a>
     </li>
   </ul>
-</div>
+</div> */}
 <div className='reviewbox'>
 <ul>
   <li>
