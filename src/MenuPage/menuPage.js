@@ -1,6 +1,6 @@
 import './menuPage.css'
 import '../LandingPage/LandingPage.css'
-import { getAllMenu, Logout } from '../API/Api'
+import { getAllMenu, insertAllMenu, Logout } from '../API/Api'
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 
@@ -16,6 +16,19 @@ function MenuPage(){
       .then (()=> {
   
       })
+    }
+    const NambahClick = (e) => {
+        e.preventDefault();
+        insertAllMenu({
+            nama: e.target.nama.value,
+            harga: e.target.harga.value,
+            deskripsi: e.target.deskripsi.value
+
+        })
+        .catch ((err) => {
+            console.log('gagal');
+            console.log(err);
+        })
     }
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
