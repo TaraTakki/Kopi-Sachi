@@ -4,43 +4,9 @@ import { getAllMenu, Logout } from '../API/Api'
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 
-<<<<<<< HEAD
 const menuname=[];
 
 function menuPage(){
-=======
-
-
-function MenuPage(){
-    const auth = useAuthState();
-    const dispatch = useAuthDispatch();
-    const [menus, setMenu] = useState(null);
-
-    const handleLogout = (e) => {
-        e.preventDefault();
-        Logout(dispatch)
-        .then (()=> {
-
-        })
-    }
-
-    useEffect(() => {
-        getAllMenu().then((data) => {
-            setMenu(data)
-        }).catch((err) => {
-            console.log(err);
-        })
-        if(menus !== null){
-        }
-    }, [])
-
-    useEffect(() => {
-        console.log(menus);
-    }, [menus])
-
-    
-    
->>>>>>> d01ae7b13d9a6a1bbd173e05042b3bebe86cc89a
     return(
         <div>
             <div className='menubackground'>
