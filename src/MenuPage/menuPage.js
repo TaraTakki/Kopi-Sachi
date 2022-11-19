@@ -204,4 +204,4 @@ function menuPage(){
 }
 
 
-export default MenuPage;
+export default menuPage;
