@@ -110,7 +110,16 @@ export const UpdateAllMenu = async(formData) => {
 const { data, error } = await supabase
 .from('menu')
 .update({ nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi  })
-.eq('id')
+.eq('id', '')
+
+}
+
+export const DeleteOneMenu = async() => {
+    
+const { data, error } = await supabase
+.from('menu')
+.delete()
+.eq('id', '')
 
 }
 
