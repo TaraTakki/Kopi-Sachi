@@ -13,6 +13,7 @@ import MenuPage from './MenuPage/menuPage';
 import ForgotPage from './ForgotPage/forgot';
 import ForgotPage2 from './ForgotPage/forgot2';
 import InsertPage from './insert/insert';
+import EditPage from './CRUD/edit';
 
 
 
@@ -35,6 +36,7 @@ function App() {
             <Route path='/forgot' element= {<GuestOnly><ForgotPage></ForgotPage></GuestOnly>}></Route>
             <Route path='/reset-password' element= {<ForgotPage2></ForgotPage2>}></Route>
             <Route path='/nambah' element={<InsertPage></InsertPage>}></Route>
+            <Route path='/edit' element={<EditPage></EditPage>}></Route>
           </Routes>
         </Router>
       </AppContext.Provider>

@@ -83,14 +83,30 @@ function MenuPage(){
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             return <>
-                                <li>
+                                {/* <li>
                                     <a href='#'><div className='menubox'>
                                     <img src='Rectangle 54.png'></img>
                                     <div><text className='title font-semibold text-[24px] text-[#2F2105] pl-6'>{menu.nama}</text>
                                     <text className='title font-semibold text-[23px] text-[#2F2105] pl-28'>{menu.harga}K</text></div>
                                     <text className='font-medium text-[#878581] font text-[15px] pl-6'>{menu.deskripsi}</text>
+                                    
                                     </div></a>
-                                </li>
+                                    
+                                    
+                                </li> */}
+                                <li>
+                                <div class="overflow-hidden shadow-lg mx-3 bg-white pr-10 menuboxz ">
+  <img class="w-full" src={menu.gambar} alt=""/>
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">{menu.nama}</div>
+    <p class="text-gray-700 text-base">
+      {menu.deskripsi}
+    </p>
+    <a href='/edit'>edit</a>
+  </div>
+  
+</div></li>
+                                
                                
                             </>
                         })}
@@ -111,12 +127,7 @@ function MenuPage(){
             </div>
             <div className='part2'>
                 <ul className='menu'>
-                    <li><a href='#'><div className='menubox'>
-                    <img src='Rectangle 35.png' alt='BlackCoffee'></img>
-                    <text className='productname'>Black Coffee</text></div></a></li>
-                    <li><a href='#'><div className='menubox'>
-                    <img src='Rectangle 36.png' alt='DalgonaCoffee'></img>
-                    <text className='productname'>Dalgona Coffee</text></div></a></li>
+                    
                     <li>
                         <a href='/nambah' type='submit' className='btn' onClick='openPopup()'><div className='addmenu'>
                             <div className='addproduct'>
@@ -127,7 +138,6 @@ function MenuPage(){
                                 <div className='addform'></div>
                             </div>
                             <script>
-                                
                             </script>
                     </li>
                 </ul>

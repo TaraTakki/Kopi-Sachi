@@ -105,6 +105,13 @@ return data;
 
 }
 
+export const UpdateAllMenu = async(formData) => {
+    
+const { data, error } = await supabase
+.from('menu')
+.update({ nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi  })
+.eq('id')
 
+}
 
 
