@@ -120,7 +120,7 @@ function MenuPage(){
                                     <a href='#'><div className='menubox'>
                                     <img src={menu.gambar}></img>
                                     <div><text className='productname'>{menu.nama}</text>
-                                    <text className='price'>{menu.harga}K</text></div>
+                                    <text className='price'>{menu.harga}</text></div>
                                     <p className='productdesc'>{menu.deskripsi}</p>
                                     <button onClick={HandleDelete}> delete</button>
                                     <a className='ml-5' href='/edit'>edit</a>
