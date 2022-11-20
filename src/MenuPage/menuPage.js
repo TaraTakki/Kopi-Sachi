@@ -3,10 +3,14 @@ import '../LandingPage/LandingPage.css'
 import { getAllMenu, insertAllMenu, Logout } from '../API/Api'
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
-
+import { supabase } from '../API/supabase';
 const menuname=[];
 
 function MenuPage(){
+    function refreshPage() {
+        window.location.reload(false);
+      }
+
     const auth = useAuthState();
     const dispatch = useAuthDispatch();
     const [menus, setMenu] = useState(null);
@@ -25,10 +29,12 @@ function MenuPage(){
             deskripsi: e.target.deskripsi.value
 
         })
+        
         .catch ((err) => {
             console.log('gagal');
             console.log(err);
         })
+        .then (()=>{refreshPage()})
     }
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
@@ -41,11 +47,12 @@ function MenuPage(){
         })
         if(menus !== null){
         }
-    }, [])
+    },[])
 
     useEffect(() => {
         console.log(menus);
     }, [menus])
+
 
     
 
@@ -97,6 +104,17 @@ function MenuPage(){
                 <ul className='menu'>
                     {menus !== null ? <>
                         {menus.map((menu) => {
+                            const HandleDelete = async() => {
+                                const { data, error } = await supabase
+                                .from('menu')
+                                .delete()
+                                .eq('id', menu.id)
+                                if(error) {
+                                    throw error;
+                                }
+                                return refreshPage();
+                                
+                            }
                             return <>
                                 <li>
                                     <a href='#'><div className='menubox'>
@@ -104,6 +122,8 @@ function MenuPage(){
                                     <div><text className='productname'>{menu.nama}</text>
                                     <text className='price'>{menu.harga}K</text></div>
                                     <p className='productdesc'>{menu.deskripsi}</p>
+                                    <button onClick={HandleDelete}> delete</button>
+                                    <a className='ml-5' href='/edit'>edit</a>
                                     </div></a>
                                 </li>
                                 
