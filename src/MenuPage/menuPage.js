@@ -1,12 +1,16 @@
 import './menuPage.css'
 import '../LandingPage/LandingPage.css'
-import { getAllMenu, Logout } from '../API/Api'
+import { getAllMenu, insertAllMenu, Logout } from '../API/Api'
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
-
+import { supabase } from '../API/supabase';
 const menuname=[];
 
 function MenuPage(){
+    function refreshPage() {
+        window.location.reload(false);
+      }
+
     const auth = useAuthState();
     const dispatch = useAuthDispatch();
     const [menus, setMenu] = useState(null);
@@ -16,6 +20,21 @@ function MenuPage(){
       .then (()=> {
   
       })
+    }
+    const NambahClick = (e) => {
+        e.preventDefault();
+        insertAllMenu({
+            nama: e.target.nama.value,
+            harga: e.target.harga.value,
+            deskripsi: e.target.deskripsi.value
+
+        })
+        
+        .catch ((err) => {
+            console.log('gagal');
+            console.log(err);
+        })
+        .then (()=>{refreshPage()})
     }
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
@@ -28,11 +47,12 @@ function MenuPage(){
         })
         if(menus !== null){
         }
-    }, [])
+    },[])
 
     useEffect(() => {
         console.log(menus);
     }, [menus])
+
 
     
 
@@ -84,6 +104,17 @@ function MenuPage(){
                 <ul className='menu'>
                     {menus !== null ? <>
                         {menus.map((menu) => {
+                            const HandleDelete = async() => {
+                                const { data, error } = await supabase
+                                .from('menu')
+                                .delete()
+                                .eq('id', menu.id)
+                                if(error) {
+                                    throw error;
+                                }
+                                return refreshPage();
+                                
+                            }
                             return <>
                                 <li>
                                     <a href='#'><div className='menubox'>
@@ -91,6 +122,8 @@ function MenuPage(){
                                     <text className='productname'>{menu.nama}</text>
                                     <text className='price'>{menu.harga}K</text>
                                     <p className='productdesc'>{menu.deskripsi}</p>
+                                    <button onClick={HandleDelete}> delete</button>
+                                    <a className='ml-5' href='/edit'>edit</a>
                                     </div></a>
                                 </li>
                                 
@@ -194,7 +227,7 @@ function MenuPage(){
                     </div>
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
-                            <div className='content'>
+                            <div className=''>
                                 <button onClick={togglePopup} className='close-btn'>X</button>
                                 <h1>Add Menu</h1>
                                 {/* <text className='formtitle'>Product type</text>
@@ -205,23 +238,24 @@ function MenuPage(){
                                         <option value='Tea'>Tea</option>
                                     </select>
                                     </div> */}
-                                <text className='formtitle'>Name</text>
-                                <form>
-                                <input type="text" id="fname" name="fname"></input>
-                                </form>
-                                <text className='formtitle'>Description</text>
-                                <form>
-                                <input type="text" id="fname" name="fname"></input>
-                                </form>
-                                <text className='formtitle'>Price</text>
-                                <form>
-                                <input type="text" id="fname" name="fname"></input>
-                                </form>
+                                    <form onSubmit={NambahClick}>
+                                        <div>
+                                <label className='formtitle'>Name</label>
+                                <input className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Description</label>
+                                <input className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%]' type="text" placeholder="Deskripsi" name="deskripsi" id="idDeskripsi"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Price</label>     
+                                <input className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Harga" name="harga" id="idHarga"  ></input></div>
                                 <text className='formtitle'>Image</text>
                                 <div className='uploadimg'>
                                     <img src='Group 34.png'></img>
                                 </div>
                                 <button type='submit' className='submitbutton'>Submit</button>
+                                </form>
                             </div>
                         </div>
                     </div>
