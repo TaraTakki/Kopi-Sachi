@@ -4,7 +4,6 @@ import { getAllMenu, insertAllMenu, Logout } from '../API/Api'
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
-const menuname=[];
 
 function MenuPage(){
     function refreshPage() {
@@ -52,11 +51,6 @@ function MenuPage(){
     useEffect(() => {
         console.log(menus);
     }, [menus])
-
-
-    
-
-
     return(
         <div>
             <div className='menubackground'>
@@ -119,11 +113,14 @@ function MenuPage(){
                                 <li>
                                     <a href='#'><div className='menubox'>
                                     <img src={menu.gambar}></img>
+
                                     <div><text className='productname'>{menu.nama}</text>
                                     <text className='price'>{menu.harga}</text></div>
+                                    <text className='productname'>{menu.nama}</text>
+                                    <text className='price'>{menu.harga}K</text>
                                     <p className='productdesc'>{menu.deskripsi}</p>
-                                    <button onClick={HandleDelete}> delete</button>
-                                    <a className='ml-5' href='/edit'>edit</a>
+                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                    <button onClick={togglePopup}><img src='editIcon.png'></img></button>
                                     </div></a>
                                 </li>
                                 
