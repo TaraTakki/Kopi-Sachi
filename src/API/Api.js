@@ -103,14 +103,19 @@ if(error) {
 }
 return data;
 
-}
+}   
 
-export const UpdateAllMenu = async(formData) => {
+export const UpdateAllMenu = async(id, formData) => {
     
 const { data, error } = await supabase
 .from('menu')
 .update({ nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi  })
-.eq('id', '')
+.eq('id', id)
+if(error){
+    throw error
+}
+
+return data
 
 }
 
