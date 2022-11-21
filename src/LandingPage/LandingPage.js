@@ -175,7 +175,7 @@ return(
 </div>
 <div className='aboutsection'>
 <img src='Group 5.png' alt='logo' className='AboutLogo'></img>
-
+<p ></p>
 </div>
     </div>
     </div>
