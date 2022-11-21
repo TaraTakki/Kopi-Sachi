@@ -144,10 +144,6 @@ return(
         </div>
       </a>
     </li>
-  </ul>
-</div>
-{/* <div className='specialmenu2'>
-  <ul className='menu'>
     <li>
       <a href='#'>
         <div className='menubox'>
@@ -176,20 +172,10 @@ return(
       </a>
     </li>
   </ul>
-</div> */}
-<div className='reviewbox'>
-<ul>
-  <li>
-      <img src='Rectangle 45.png' alt='Cobuz'></img>
-      <div className='review'></div>
-  </li>
-  <li>
-      <img src='Rectangle 39.png' alt='Cobuz'></img>
-  </li>
-  <li>
-      <img src='Rectangle 43.png' alt='Cobuz'></img>
-  </li>
-</ul>
+</div>
+<div className='aboutsection'>
+<img src='Group 5.png' alt='logo' className='AboutLogo'></img>
+
 </div>
     </div>
     </div>
