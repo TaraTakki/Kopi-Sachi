@@ -116,9 +116,6 @@ function MenuPage(){
                                 <li>
                                     <a href='#'><div className='menubox'>
                                     <img src={menu.gambar}></img>
-
-                                    <div><text className='productname'>{menu.nama}</text>
-                                    <text className='price'>{menu.harga}</text></div>
                                     <text className='productname'>{menu.nama}</text>
                                     <text className='price'>{menu.harga}K</text>
                                     <p className='productdesc'>{menu.deskripsi}</p>
