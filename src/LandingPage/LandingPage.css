@@ -266,3 +266,15 @@ margin-top: 25px;
   margin-left: 29%;
   margin-bottom: 50%;
 }
+.aboutsection{
+  width: 100%;
+  height: 540px;
+  background-color: #F8D8A9;
+  margin-top: 10%;
+}
+.AboutLogo{
+  position: absolute;
+  width: 151px;
+  margin-left: 10%;
+  margin-top: 5%;
+}

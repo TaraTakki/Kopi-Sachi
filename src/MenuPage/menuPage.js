@@ -38,6 +38,9 @@ function MenuPage(){
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
     }
+    function toggleEditPopup(){
+        document.getElementById('popup-2').classList.toggle('active')
+    }
     useEffect(() => {
         getAllMenu().then((data) => {
             setMenu(data)
@@ -117,7 +120,7 @@ function MenuPage(){
                                     <text className='price'>{menu.harga}K</text>
                                     <p className='productdesc'>{menu.deskripsi}</p>
                                     <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                    <button onClick={togglePopup}><img src='editIcon.png'></img></button>
+                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
                                     </div></a>
                                 </li>
                                 
@@ -224,6 +227,40 @@ function MenuPage(){
                             <div className=''>
                                 <button onClick={togglePopup} className='close-btn'>X</button>
                                 <h1>Add Coffee</h1>
+                                {/* <text className='formtitle'>Product type</text>
+                                <div>
+                                    <select name='producttype'>
+                                        <option value='Coffee'>Coffee</option>
+                                        <option value='Food'>Food</option>
+                                        <option value='Tea'>Tea</option>
+                                    </select>
+                                    </div> */}
+                                    <form onSubmit={NambahClick}>
+                                        <div>
+                                <label className='formtitle'>Name</label>
+                                <input className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Description</label>
+                                <input className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%]' type="text" placeholder="Deskripsi" name="deskripsi" id="idDeskripsi"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Price</label>     
+                                <input className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Harga" name="harga" id="idHarga"  ></input></div>
+                                <text className='formtitle'>Image</text>
+                                <div className='uploadimg'>
+                                    <img src='Group 34.png'></img>
+                                </div>
+                                <button type='submit' className='submitbutton'>Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='Editpopup' id='popup-2'>
+                        <div className='overlay'>
+                            <div className=''>
+                                <button onClick={toggleEditPopup} className='close-btn'>X</button>
+                                <h1>Edit Menu</h1>
                                 {/* <text className='formtitle'>Product type</text>
                                 <div>
                                     <select name='producttype'>
