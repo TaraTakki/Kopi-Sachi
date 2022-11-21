@@ -1,6 +1,6 @@
 import './menuPage.css'
 import '../LandingPage/LandingPage.css'
-import { getAllMenu, insertAllMenu, Logout } from '../API/Api'
+import { getAllMenu, insertAllMenu, Logout, me, UpdateAllMenu } from '../API/Api'
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
@@ -35,6 +35,28 @@ function MenuPage(){
         })
         .then (()=>{refreshPage()})
     }
+
+    const hadleSave = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target)
+        var data = {};
+        formData.forEach(function(value, key){
+            data[key] = value;
+        });
+        UpdateAllMenu(auth.data.user.id, data).then((res) => {
+            me(auth.data.id).then((menu) => {
+                localStorage.setItem('_menu', JSON.stringify(menu))
+                dispatch({type: 'AFTER_UPDATE_PROFILE', menu: menu})
+            })
+
+        })
+        .catch((err) =>{
+            console.log('gagal');
+            console.log(err);
+        })
+        .then (() => refreshPage())
+    }
+
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
     }
@@ -54,6 +76,8 @@ function MenuPage(){
     useEffect(() => {
         console.log(menus);
     }, [menus])
+
+    
     return(
         <div>
             <div className='menubackground'>
@@ -269,7 +293,7 @@ function MenuPage(){
                                         <option value='Tea'>Tea</option>
                                     </select>
                                     </div> */}
-                                    <form onSubmit={NambahClick}>
+                                    <form>
                                         <div>
                                 <label className='formtitle'>Name</label>
                                 <input className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>

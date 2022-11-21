@@ -119,6 +119,18 @@ return data
 
 }
 
+export const me = async (id) => {
+    let { data: menu, error } = await supabase
+    .from('menu')
+    .select('*').eq('id', id)
+    
+    if(error){
+        throw error
+    }
+    
+    return menu[0] ? menu[0] : null
+}
+
 export const DeleteAllMenu = async() => {
     
 const { data, error } = await supabase
