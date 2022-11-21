@@ -223,7 +223,7 @@ function MenuPage(){
                         <div className='overlay'>
                             <div className=''>
                                 <button onClick={togglePopup} className='close-btn'>X</button>
-                                <h1>Add Menu</h1>
+                                <h1>Add Coffee</h1>
                                 {/* <text className='formtitle'>Product type</text>
                                 <div>
                                     <select name='producttype'>
