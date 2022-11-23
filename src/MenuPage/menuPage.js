@@ -1,9 +1,10 @@
 import './menuPage.css'
 import '../LandingPage/LandingPage.css'
-import { getAllMenu, insertAllMenu, Logout, me, UpdateAllMenu } from '../API/Api'
+import { getAllMenu, getBucket, insertAllMenu, Logout, me, UpdateAllMenu } from '../API/Api'
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
+import { UpdateDisabled } from '@mui/icons-material';
 
 function MenuPage(){
     function refreshPage() {
@@ -36,27 +37,6 @@ function MenuPage(){
         .then (()=>{refreshPage()})
     }
 
-    const hadleSave = (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target)
-        var data = {};
-        formData.forEach(function(value, key){
-            data[key] = value;
-        });
-        UpdateAllMenu(auth.data.user.id, data).then((res) => {
-            me(auth.data.id).then((menu) => {
-                localStorage.setItem('_menu', JSON.stringify(menu))
-                dispatch({type: 'AFTER_UPDATE_PROFILE', menu: menu})
-            })
-
-        })
-        .catch((err) =>{
-            console.log('gagal');
-            console.log(err);
-        })
-        .then (() => refreshPage())
-    }
-
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
     }
@@ -74,8 +54,9 @@ function MenuPage(){
     },[])
 
     useEffect(() => {
-        console.log(menus);
+        // console.log(menus);
     }, [menus])
+
 
     
     return(
@@ -280,7 +261,10 @@ function MenuPage(){
                             </div>
                         </div>
                     </div>
-                    <div className='Editpopup' id='popup-2'>
+                    {menus !== null ? <>
+                        {menus.map((menu) => {
+                            return <>
+                                <div className='Editpopup' id='popup-2'>
                         <div className='overlay'>
                             <div className=''>
                                 <button onClick={toggleEditPopup} className='close-btn'>X</button>
@@ -293,18 +277,18 @@ function MenuPage(){
                                         <option value='Tea'>Tea</option>
                                     </select>
                                     </div> */}
-                                    <form>
+                                    <form >
                                         <div>
                                 <label className='formtitle'>Name</label>
-                                <input className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
+                                <input defaultValue={menu.nama} className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
                                 </div>
                                 <div>
                                 <label className='formtitle'>Description</label>
-                                <input className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%]' type="text" placeholder="Deskripsi" name="deskripsi" id="idDeskripsi"></input>
+                                <input defaultValue={menu.deskripsi} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%]' type="text" placeholder="Deskripsi" name="deskripsi" id="idDeskripsi"></input>
                                 </div>
                                 <div>
                                 <label className='formtitle'>Price</label>     
-                                <input className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Harga" name="harga" id="idHarga"  ></input></div>
+                                <input defaultValue={menu.harga} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Harga" name="harga" id="idHarga"  ></input></div>
                                 <text className='formtitle'>Image</text>
                                 <div className='uploadimg'>
                                     <img src='Group 34.png'></img>
@@ -314,6 +298,13 @@ function MenuPage(){
                             </div>
                         </div>
                     </div>
+                                
+                            </>
+                        })}
+                    </> : <>
+                        
+                    </>}
+                    
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
                 </div>
             </div>

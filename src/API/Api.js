@@ -91,6 +91,18 @@ export const getAllMenu = async() => {
 
 }
 
+
+export const getBucket = async() => {
+    const { data, error } = await supabase
+  .storage
+  .getBucket('gambar')
+  if(error){
+    throw error;
+}
+return data;
+}
+
+
 export const insertAllMenu = async(formData) => {
     
 const { data, error } = await supabase
@@ -110,7 +122,7 @@ export const UpdateAllMenu = async(id, formData) => {
 const { data, error } = await supabase
 .from('menu')
 .update({ nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi  })
-.eq('id', id)
+.eq('id', id )
 if(error){
     throw error
 }
