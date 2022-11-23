@@ -291,7 +291,7 @@ function MenuPage(){
                                         <option value='Tea'>Tea</option>
                                     </select>
                                     </div> */}
-                                    <form onSubmit={editClick} >
+                                    <form onSubmit={editClick}>
                                         <div>
                                 <label className='formtitle'>Name</label>
                                 <input defaultValue={menu.id} name="id" hidden></input>
