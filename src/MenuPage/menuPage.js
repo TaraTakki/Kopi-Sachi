@@ -37,11 +37,25 @@ function MenuPage(){
         .then (()=>{refreshPage()})
     }
 
+    const editClick = (e) => {
+        e.preventDefault()
+        UpdateAllMenu(e.target.id.value, {
+            nama: e.target.nama.value,
+            harga: e.target.harga.value,
+            deskripsi: e.target.deskripsi.value
+        }).then(() => {
+            refreshPage()
+        }).catch(() => {
+
+        })
+    }
+
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
     }
     function toggleEditPopup(){
         document.getElementById('popup-2').classList.toggle('active')
+
     }
     useEffect(() => {
         getAllMenu().then((data) => {
@@ -277,9 +291,10 @@ function MenuPage(){
                                         <option value='Tea'>Tea</option>
                                     </select>
                                     </div> */}
-                                    <form >
+                                    <form onSubmit={editClick} >
                                         <div>
                                 <label className='formtitle'>Name</label>
+                                <input defaultValue={menu.id} name="id" hidden></input>
                                 <input defaultValue={menu.nama} className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
                                 </div>
                                 <div>
