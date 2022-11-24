@@ -5,6 +5,7 @@ import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
 import { UpdateDisabled } from '@mui/icons-material';
+import { Navbar } from '../Components/Navbar';
 
 function MenuPage(){
     function refreshPage() {
@@ -76,44 +77,7 @@ function MenuPage(){
     return(
         <div>
             <div className='menubackground'>
-            <section>
-                <img src='Group 5.png' alt='logo' className='Logo'></img>
-                {/* <img src='Group 14.png' alt='bijikopi1' className='bijikopi1'></img>
-                <img src='Group 15.png' alt='bijikopi2' className='bijikopi2'></img> */}
-            </section>
-    <section className='flex justify-center my'><div className='navbar'>
-    <ul>
-    <li><a href="/">Home Page</a></li>
-    <li className='MenuNav'><a href="/menu">Menu
-    {/* <div className='dropdowncontent'>
-                <a href='#'>Food</a>
-                <a href='#'>Beverage</a>
-                <a href='#'>Snack</a>
-    </div> */}
-    </a></li>
-    <li><a href="#">Promo</a></li>
-    <li><a href="#">Location</a></li>
-    
-  </ul>
-  
-    </div>
-    </section>
-    <div className='flex justify-end mr-8 -my-8 mx'>
-      {auth.data.session ? <>
-        {/* <h1>{auth.data.user.email}</h1> */}
-        <button onClick={handleLogout}  class="bg-transparent mr-3 hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
-            Logout
-        </button>
-      </> : <>
-        <a href='/register' class="bg-transparent mr-3 hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full ">
-            Sign Up
-        </a>
-        <a href='/login' class="bg-transparent hover:bg-yellow-700 text-yellow-700 font-semibold hover:text-white py-2 px-4 border-2 border-yellow-700 hover:border-transparent rounded-full">
-          Log In
-        </a>
-      </>}
-    </div>
-    
+        <Navbar />
     <div className='Coffee'>
             <div className='part1'>
                 <text className='menutitle'>Coffee</text>
@@ -138,8 +102,11 @@ function MenuPage(){
                                     <text className='productname'>{menu.nama}</text>
                                     <text className='price'>{menu.harga}K</text>
                                     <p className='productdesc'>{menu.deskripsi}</p>
-                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                    {auth.data.session && <>
+                                        <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                        <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+
+                                    </>}
                                     </div></a>
                                 </li>
                                 
