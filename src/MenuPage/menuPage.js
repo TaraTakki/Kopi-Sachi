@@ -4,7 +4,7 @@ import { getAllMenu, getBucket, insertAllMenu, Logout, me, UpdateAllMenu } from 
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
-import { UpdateDisabled } from '@mui/icons-material';
+import { Coffee, UpdateDisabled } from '@mui/icons-material';
 import { Navbar } from '../Components/Navbar';
 
 function MenuPage(){
@@ -94,23 +94,26 @@ function MenuPage(){
                                 }
                                 return refreshPage();
                             }
+                            if(menu.kategori === 'coffe'){
                             
-                            return <>
-                                <li>
-                                    <a href='#'><div className='menubox'>
-                                    <img src={menu.gambar}></img>
-                                    <text className='productname'>{menu.nama}</text>
-                                    <text className='price'>{menu.harga}K</text>
-                                    <p className='productdesc'>{menu.deskripsi}</p>
-                                    {auth.data.session && <>
-                                        <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                        <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                return <>
+                                    <li>
+                                        <a href='#'><div className='menubox'>
+                                        <img src={menu.gambar}></img>
+                                        <text className='productname'>{menu.nama}</text>
+                                        <text className='price'>{menu.harga}K</text>
+                                        <p className='productdesc'>{menu.deskripsi}</p>
+                                        {auth.data.session && <>
+                                            <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
 
-                                    </>}
-                                    </div></a>
-                                </li>
-                                
-                            </>
+                                        </>}
+                                        </div></a>
+                                    </li>
+                                </>
+
+
+                            }
                         })}
                     </> : <>
                         No Product
