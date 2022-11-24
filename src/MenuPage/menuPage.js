@@ -129,7 +129,6 @@ function MenuPage(){
                                     throw error;
                                 }
                                 return refreshPage();
-                                
                             }
                             
                             return <>
