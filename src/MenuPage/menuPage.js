@@ -183,19 +183,6 @@ function MenuPage(){
 
 
                             }
-                            return <>
-                                <li>
-                                    <a href='#'><div className='menubox'>
-                                    <img src={menu.gambar}></img>
-                                    <text className='productname'>{menu.nama}</text>
-                                    <text className='price'>{menu.harga}K</text>
-                                    <p className='productdesc'>{menu.deskripsi}</p>
-                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
-                                    </div></a>
-                                </li>
-                                
-                            </>
                         })}
                     </> : <>
                         No Product
@@ -254,19 +241,6 @@ function MenuPage(){
 
                             }
 
-                            return <>
-                                <li>
-                                    <a href='#'><div className='menubox'>
-                                    <img src={menu.gambar}></img>
-                                    <text className='productname'>{menu.nama}</text>
-                                    <text className='price'>{menu.harga}K</text>
-                                    <p className='productdesc'>{menu.deskripsi}</p>
-                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
-                                    </div></a>
-                                </li>
-                                
-                            </>
                         })}
                     </> : <>
                         No Product
