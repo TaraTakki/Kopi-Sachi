@@ -335,7 +335,7 @@ function MenuPage(){
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
                     {isPopUpEditActive ? <> 
                         <PopUpEdit isActive={isPopUpEditActive} menu={popUpEditData} closeCallback={closeEditPopup} />                    
-                    </> : ""}
+                    </> : <></>}
                 </div>
             </div>
     

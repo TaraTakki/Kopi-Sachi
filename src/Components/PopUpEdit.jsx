@@ -4,16 +4,13 @@ import { refreshPage } from "../utils/utils"
 
 export const PopUpEdit = ({ menu, closeCallback }) => {
 
-    function toggleEditPopup(){
-        document.getElementById('popup-2').classList.toggle('active')
-    }    
-
     const editClick = (e) => {
         e.preventDefault()
         UpdateAllMenu(e.target.id.value, {
             nama: e.target.nama.value,
             harga: e.target.harga.value,
             deskripsi: e.target.deskripsi.value,
+            kategori: e.target.kategori.values
         }).then(() => {
             refreshPage()
         }).catch(() => {
@@ -28,14 +25,14 @@ export const PopUpEdit = ({ menu, closeCallback }) => {
                             <div className=''>
                                 <button onClick={closeCallback} className='close-btn'>X</button>
                                 <h1>Edit Menu</h1>
-                                {/* <text className='formtitle'>Product type</text>
+                                <label className='formtitle'>Product type</label>
                                 <div>                   
-                                    <select name='producttype'>
+                                    <select name='kategori'>
                                         <option value='Coffee'>Coffee</option>
                                         <option value='Food'>Food</option>
                                         <option value='Tea'>Tea</option>
                                     </select>
-                                    </div> */}
+                                    </div>
                                     <form onSubmit={editClick}>
                                         <div>
                                 <label className='formtitle'>Name</label>
