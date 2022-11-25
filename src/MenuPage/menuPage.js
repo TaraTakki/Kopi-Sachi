@@ -4,7 +4,7 @@ import { getAllMenu, getBucket, insertAllMenu, Logout, me, UpdateAllMenu } from 
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
-import { Coffee, UpdateDisabled } from '@mui/icons-material';
+
 import { Navbar } from '../Components/Navbar';
 
 function MenuPage(){
@@ -324,7 +324,10 @@ function MenuPage(){
                                 </form>
                             </div>
                         </div>
+
                     </div>
+                    </> })} </> : <></>}
+                    
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
@@ -340,8 +343,8 @@ function MenuPage(){
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
                 </div>
             </div>
+                        )
     
-    )
 }
 
 
