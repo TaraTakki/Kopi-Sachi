@@ -154,74 +154,114 @@ function MenuPage(){
             </div>
             
     </div>
-                <div className='food'>
-                    <text className='menutitle'>Food</text>
-                    <div className='part1'>
-                    <ul className='menu'>
-                        <li><a href='#'><div className='menubox'>
-                        <img src='Rectangle 27.png' alt='Cruffle'></img>
-                        <text className='productname'>Cruffle</text>
-                            </div></a></li>
-                        <li><a href='#'><div className='menubox'>
-                        <img src='Rectangle 68.png' alt='Cheese Cake'></img>
-                        <text className='productname'>Cheese Cake</text></div></a></li>
-                        <li><a href='#'><div className='menubox'>
-                        <img src='Rectangle 70.png' alt='Macarons'></img>
-                        <text className='productname'>Macarons</text></div></a></li>
-                    </ul>
-                    </div>
-                    <div className='part2'>
-                    <ul className='menu'>
-                        <li><a href='#'><div className='menubox'>
-                        <img src='Rectangle 67.png' alt='Sugar Donuts'></img>
-                        <text className='productname'>Sugar Donuts</text></div></a></li>
-                        <li><a href='#'><div className='menubox'>
-                        <img src='Rectangle 69.png' alt='Lava Cake'></img>
-                        <text className='productname'>Lava Cake</text></div></a></li>
-                        <li>
-                        <a href='/nambah'><section className='addmenu'>
-                            <section className='mt-20 ml-24 add'>
-                            <img src='Vector.png' className='add'></img>
-                            <text className='addproduct'>Add Product</text>
-                            </section>
-                            </section></a>
+    <div className='Food'>
+            <div className='part1'>
+                <text className='menutitle'>Food</text>
+                <ul className='menu'>
+                    {menus !== null ? <>
+                        {menus.map((menu) => {
+                            const HandleDelete = async() => {
+                                const { data, error } = await supabase
+                                .from('menu')
+                                .delete()
+                                .eq('id', menu.id)
+                                if(error) {
+                                    throw error;
+                                }
+                                return refreshPage();
+                                
+                            }
+                            return <>
+                                <li>
+                                    <a href='#'><div className='menubox'>
+                                    <img src={menu.gambar}></img>
+                                    <text className='productname'>{menu.nama}</text>
+                                    <text className='price'>{menu.harga}K</text>
+                                    <p className='productdesc'>{menu.deskripsi}</p>
+                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                    </div></a>
+                                </li>
+                                
+                            </>
+                        })}
+                    </> : <>
+                        No Product
+                    </>}
+                    <li>
+                        <button  onClick={togglePopup}><div className='addmenu'>
+                            <div className='addproduct'>
+                            <img src='Vector.png'></img>
+                            </div>
+                            </div></button>
+                            <script>
+                        
+                    </script>
                     </li>
-                    </ul>
-                    </div>
-                </div>
-                <div className='Tea'>
-                    <text className='menutitle'>Tea</text>
-                    <div className='part1'>
-                        <ul className='menu'>
-                            <li><a href='#'><div className='menubox'>
-                            <img src='Rectangle 78.png' alt='lemontea'></img>
-                            <text className='productname'>Lemon Tea</text></div></a></li>
-                            <li><a href='#'><div className='menubox'>
-                            <img src='Rectangle 80.png' alt='matchatea'></img>
-                            <text className='productname'>Matcha Tea</text></div></a></li>
-                            <li><a href='#'><div className='menubox'>
-                            <img src='Rectangle 82.png' alt='lycheetea'></img>
-                            <text className='productname'>Lychee Tea</text></div></a></li>
-                        </ul>
-                    </div>
-                    <div className='part2'>
-                        <ul className='menu'>
-                            <li><a href='#'><div className='menubox'>
-                            <img src='Rectangle 79.png' alt='bobatea'></img>
-                            <text className='productname'>Boba Tea</text></div></a></li>
-                            <li><a href='#'><div className='menubox'>
-                            <img src='Rectangle 81.png' alt='milktea'></img>
-                            <text className='productname'>Milk Tea</text></div></a></li>
-                            <li>
-                        <a href='#'><section className='addmenu'>
-                            <section className='mt-20 ml-24 add'>
-                            <img src='Vector.png' className='add'></img>
-                            <text className='addproduct'>Add Product</text>
-                            </section>
-                            </section></a>
+
+                </ul>
+            </div>
+            
+    </div>
+    <div className='Tea'>
+            <div className='part1'>
+                <text className='menutitle'>Tea</text>
+                <ul className='menu'>
+                    {menus !== null ? <>
+                        {menus.map((menu) => {
+                            const HandleDelete = async() => {
+                                const { data, error } = await supabase
+                                .from('menu')
+                                .delete()
+                                .eq('id', menu.id)
+                                if(error) {
+                                    throw error;
+                                }
+                                return refreshPage();
+                                
+                            }
+                            return <>
+                                <li>
+                                    <a href='#'><div className='menubox'>
+                                    <img src={menu.gambar}></img>
+                                    <text className='productname'>{menu.nama}</text>
+                                    <text className='price'>{menu.harga}K</text>
+                                    <p className='productdesc'>{menu.deskripsi}</p>
+                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                    </div></a>
+                                </li>
+                                
+                            </>
+                        })}
+                    </> : <>
+                        No Product
+                    </>}
+                    <li>
+                        <button  onClick={togglePopup}><div className='addmenu'>
+                            <div className='addproduct'>
+                            <img src='Vector.png'></img>
+                            </div>
+                            </div></button>
+                            <script>
+                        
+                    </script>
                     </li>
-                        </ul>
-                    </div>
+                    
+                    {/* <li>
+                        <a href='#'><div className='menubox'>
+                        <img src='Rectangle 29.png' alt='Cappucino'></img>
+                        <text className='productname'>Cappucino</text></div></a>
+                    </li>
+                    <li>
+                        <a href='#'><div className='menubox'>
+                        <img src='Rectangle 31.png' alt='Moccacino'></img>
+                        <text className='productname'>Moccacino</text></div></a>
+                    </li> */}
+                </ul>
+            </div>
+            
+    </div>
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
                             <div className=''>
@@ -290,10 +330,22 @@ function MenuPage(){
                             </div>
                         </div>
                     </div>
+                    <div className='DeletePopup' id='popup-3'>
+                        <div className='overlay'>
+                            <div>
+                            <text className='deleteconfirmation'>Are you sure to delete this menu?</text>
+                            <ul>
+                                <li>
+                                    <button></button>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
                 </div>
             </div>
-        </div>
+    
     )
 }
 

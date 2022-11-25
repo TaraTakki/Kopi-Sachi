@@ -278,3 +278,31 @@ margin-top: 25px;
   margin-left: 10%;
   margin-top: 5%;
 }
+.aboutdesc{
+  position: absolute;
+  margin-top: 13%;
+  margin-left: 10%;
+  width: 20%;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2F2105;
+}
+.location{
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+.address{
+  font-size: 16px;
+  font-weight: 600;
+  color: #2F2105;
+}
+.aboutlist1{
+  margin-left: 35%;
+  margin-top: 15%;
+}
+.aboutlist1 li{
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 15%;
+}
