@@ -275,15 +275,15 @@ function MenuPage(){
                             <div className=''>
                                 <button onClick={togglePopup} className='close-btn'>X</button>
                                 <h1>Add Coffee</h1>
-                                {/* <text className='formtitle'>Product type</text> */}
+                                <text className='formtitle'>Product type</text>
                                     <form onSubmit={NambahClick}>
-                                    {/* <div>
+                                    <div>
                                     <select name='producttype'>
                                         <option  value='Coffee' name="coffe" id='idCoffe'>Coffee</option>
                                         <option value='Food' name="food" id='idFood'>Food</option>
                                         <option value='Tea' name="tea" id='idTea'>Tea</option>
                                     </select>
-                                    </div> */}
+                                    </div>
                                         <div>
                                 <label className='formtitle'>Name</label>
                                 <input className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
