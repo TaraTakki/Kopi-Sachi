@@ -5,15 +5,19 @@ import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
 import { Navbar } from '../Components/Navbar';
+import { PopUpEdit } from '../Components/PopUpEdit';
 
 function MenuPage(){
     function refreshPage() {
         window.location.reload(false);
-      }
+    }
 
     const auth = useAuthState();
     const dispatch = useAuthDispatch();
     const [menus, setMenu] = useState(null);
+    const [isPopUpEditActive, setIsPopUpEditActive] = useState(false);
+    const [popUpEditData, setPopUpEditData] = useState({})
+
     const handleLogout = (e) => {
       e.preventDefault();
       Logout(dispatch)
@@ -23,11 +27,12 @@ function MenuPage(){
     }
     const NambahClick = (e) => {
         e.preventDefault();
+        
         insertAllMenu({
             nama: e.target.nama.value,
             harga: e.target.harga.value,
-            deskripsi: e.target.deskripsi.value
-
+            deskripsi: e.target.deskripsi.value,
+            kategori: e.target.kategori.value
         })
         
         .catch ((err) => {
@@ -53,11 +58,18 @@ function MenuPage(){
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
     }
-    function toggleEditPopup(){
-        document.getElementById('popup-2').classList.toggle('active')
 
+    function toggleEditPopup(menu) {
+        setIsPopUpEditActive(true)
+        setPopUpEditData(menu)
     }
+
+    function closeEditPopup() {
+        setIsPopUpEditActive(false);
+    }
+
     useEffect(() => {
+        console.log(isPopUpEditActive);
         getAllMenu().then((data) => {
             setMenu(data)
         }).catch((err) => {
@@ -106,7 +118,7 @@ function MenuPage(){
                                         <p className='productdesc'>{menu.deskripsi}</p>
                                         {auth.data.session ? <>
                                             <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                            <button onClick={() => {toggleEditPopup( menu )}}><img src='editIcon.png'></img></button>
       </> : <>
         <img src='keran.png'></img>
         
@@ -144,7 +156,6 @@ function MenuPage(){
                     </li> */}
                 </ul>
             </div>
-            
     </div>
     <div className='Food'>
             <div className='part1'>
@@ -278,7 +289,7 @@ function MenuPage(){
                                 <text className='formtitle'>Product type</text>
                                     <form onSubmit={NambahClick}>
                                     <div>
-                                    <select name='producttype'>
+                                    <select name='kategori'>
                                         <option  value='Coffee' name="coffe" id='idCoffe'>Coffee</option>
                                         <option value='Food' name="food" id='idFood'>Food</option>
                                         <option value='Tea' name="tea" id='idTea'>Tea</option>
@@ -307,41 +318,7 @@ function MenuPage(){
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             return <>
-                                <div className='Editpopup' id='popup-2'>
-                        <div className='overlay'>
-                            <div className=''>
-                                <button onClick={toggleEditPopup} className='close-btn'>X</button>
-                                <h1>Edit Menu</h1>
-                                {/* <text className='formtitle'>Product type</text>
-                                <div>
-                                    <select name='producttype'>
-                                        <option value='Coffee'>Coffee</option>
-                                        <option value='Food'>Food</option>
-                                        <option value='Tea'>Tea</option>
-                                    </select>
-                                    </div> */}
-                                    <form onSubmit={editClick}>
-                                        <div>
-                                <label className='formtitle'>Name</label>
-                                <input defaultValue={menu.id} name="id" hidden></input>
-                                <input defaultValue={menu.nama} className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
-                                </div>
-                                <div>
-                                <label className='formtitle'>Description</label>
-                                <input defaultValue={menu.deskripsi} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%]' type="text" placeholder="Deskripsi" name="deskripsi" id="idDeskripsi"></input>
-                                </div>
-                                <div>
-                                <label className='formtitle'>Price</label>     
-                                <input defaultValue={menu.harga} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Harga" name="harga" id="idHarga"  ></input></div>
-                                <text className='formtitle'>Image</text>
-                                <div className='uploadimg'>
-                                    <img src='Group 34.png'></img>
-                                </div>
-                                <button type='submit' className='submitbutton'>Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                                
                     </> })} </> : <></>}
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
@@ -356,6 +333,9 @@ function MenuPage(){
                         </div>
                     </div>
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
+                    {isPopUpEditActive ? <> 
+                        <PopUpEdit isActive={isPopUpEditActive} menu={popUpEditData} closeCallback={closeEditPopup} />                    
+                    </> : ""}
                 </div>
             </div>
     
