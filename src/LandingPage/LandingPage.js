@@ -4,7 +4,6 @@ import { Navbar } from '../Components/Navbar';
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import './LandingPage.css'
 
-
 function LandingPage(){
 
   
@@ -136,7 +135,23 @@ return(
 </div>
 <div className='aboutsection'>
 <img src='Group 5.png' alt='logo' className='AboutLogo'></img>
-<p ></p>
+<p className='aboutdesc'>SACHI is cafe that serve many 
+variant coffee and other dishes with
+comfort</p>
+<a href='https://goo.gl/maps/yVy3Km7qhukdKyju8' className='location'>
+  <img src='Group 50.png'></img>
+  <text className='address'>Jl. Madukismo, Yogyakarta, Bantul </text></a>
+  <ul className='aboutlist1'>
+    <li>
+      <text>Explore</text>
+    </li>
+    <li>
+      <text>Menu</text>
+    </li>
+    <li>
+      <text>Contact Us</text>
+    </li>
+  </ul>
 </div>
     </div>
     </div>

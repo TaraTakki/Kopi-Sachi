@@ -177,6 +177,21 @@ select{
     margin-left: 5%;
     margin-top: 5%;
 }
+.DeletePopup{
+    width: 60%;
+    height: 200px;
+    border-width: 2px;
+    border-color: #2F2105;
+    border-radius: 39px;
+    background-color: #FFCB7C;
+}
+.deleteconfirmation{
+    position: absolute;
+    font-size: 30px;
+    margin-top: 3%;
+    margin-left: 5%;
+    font-weight: bold;
+}
 .menu div:hover{
     animation-name: floating;
     animation-duration: 1s;

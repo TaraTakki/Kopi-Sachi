@@ -146,10 +146,10 @@ function MenuPage(){
             </div>
             
     </div>
-                <div className='food'>
-                    <text className='menutitle'>Food</text>
-                    <div className='part1'>
-                    <ul className='menu'>
+    <div className='Food'>
+            <div className='part1'>
+                <text className='menutitle'>Food</text>
+                <ul className='menu'>
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             const HandleDelete = async() => {
@@ -161,6 +161,7 @@ function MenuPage(){
                                     throw error;
                                 }
                                 return refreshPage();
+                                
                             }
                             if(menu.kategori === 'food'){
                             
@@ -182,6 +183,19 @@ function MenuPage(){
 
 
                             }
+                            return <>
+                                <li>
+                                    <a href='#'><div className='menubox'>
+                                    <img src={menu.gambar}></img>
+                                    <text className='productname'>{menu.nama}</text>
+                                    <text className='price'>{menu.harga}K</text>
+                                    <p className='productdesc'>{menu.deskripsi}</p>
+                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                    </div></a>
+                                </li>
+                                
+                            </>
                         })}
                     </> : <>
                         No Product
@@ -196,17 +210,16 @@ function MenuPage(){
                         
                     </script>
                     </li>
-                        
-                        
-                    </ul>
-                    </div>
-                    
-                </div>
-                <div className='Tea'>
-                    <text className='menutitle'>Tea</text>
-                    <div className='part1'>
-                        <ul className='menu'>
-                        {menus !== null ? <>
+
+                </ul>
+            </div>
+            
+    </div>
+    <div className='Tea'>
+            <div className='part1'>
+                <text className='menutitle'>Tea</text>
+                <ul className='menu'>
+                    {menus !== null ? <>
                         {menus.map((menu) => {
                             const HandleDelete = async() => {
                                 const { data, error } = await supabase
@@ -217,6 +230,7 @@ function MenuPage(){
                                     throw error;
                                 }
                                 return refreshPage();
+                                
                             }
                             if(menu.kategori === 'tea'){
                             
@@ -239,6 +253,20 @@ function MenuPage(){
 
 
                             }
+
+                            return <>
+                                <li>
+                                    <a href='#'><div className='menubox'>
+                                    <img src={menu.gambar}></img>
+                                    <text className='productname'>{menu.nama}</text>
+                                    <text className='price'>{menu.harga}K</text>
+                                    <p className='productdesc'>{menu.deskripsi}</p>
+                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                    </div></a>
+                                </li>
+                                
+                            </>
                         })}
                     </> : <>
                         No Product
@@ -253,10 +281,21 @@ function MenuPage(){
                         
                     </script>
                     </li>
-                            
-                        </ul>
-                    </div>
                     
+                    {/* <li>
+                        <a href='#'><div className='menubox'>
+                        <img src='Rectangle 29.png' alt='Cappucino'></img>
+                        <text className='productname'>Cappucino</text></div></a>
+                    </li>
+                    <li>
+                        <a href='#'><div className='menubox'>
+                        <img src='Rectangle 31.png' alt='Moccacino'></img>
+                        <text className='productname'>Moccacino</text></div></a>
+                    </li> */}
+                </ul>
+            </div>
+            
+    </div>
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
                             <div className=''>
@@ -329,17 +368,23 @@ function MenuPage(){
                             </div>
                         </div>
                     </div>
-                                
-                            </>
-                        })}
-                    </> : <>
-                        
-                    </>}
-                    
+                    </> })} </> : <></>}
+                    <div className='DeletePopup' id='popup-3'>
+                        <div className='overlay'>
+                            <div>
+                            <text className='deleteconfirmation'>Are you sure to delete this menu?</text>
+                            <ul>
+                                <li>
+                                    <button></button>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
                 </div>
             </div>
-        </div>
+    
     )
 }
 
