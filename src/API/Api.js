@@ -91,12 +91,24 @@ export const getAllMenu = async() => {
 
 }
 
+
+export const getBucket = async() => {
+    const { data, error } = await supabase
+  .storage
+  .getBucket('gambar')
+  if(error){
+    throw error;
+}
+return data;
+}
+
+
 export const insertAllMenu = async(formData) => {
     
 const { data, error } = await supabase
 .from('menu')
 .insert([
-  { nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi },
+  { nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi, kategori: formData.kategori},
 ])
 if(error) {
     throw error;
@@ -110,13 +122,25 @@ export const UpdateAllMenu = async(id, formData) => {
 const { data, error } = await supabase
 .from('menu')
 .update({ nama: formData.nama, harga: formData.harga, deskripsi: formData.deskripsi  })
-.eq('id', id)
+.eq('id', id )
 if(error){
     throw error
 }
 
 return data
 
+}
+
+export const me = async (id) => {
+    let { data: menu, error } = await supabase
+    .from('menu')
+    .select('*').eq('id', id)
+    
+    if(error){
+        throw error
+    }
+    
+    return menu[0] ? menu[0] : null
 }
 
 export const DeleteAllMenu = async() => {
