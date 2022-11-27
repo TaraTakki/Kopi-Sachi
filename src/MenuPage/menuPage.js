@@ -263,7 +263,6 @@ function MenuPage(){
                             </div>
                             </div></button>
                             <script>
-                        
                     </script>
                     </li>
                     
