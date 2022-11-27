@@ -48,6 +48,7 @@ function MenuPage(){
             nama: e.target.nama.value,
             harga: e.target.harga.value,
             deskripsi: e.target.deskripsi.value,
+            kategori: e.target.kategori.value
         }).then(() => {
             refreshPage()
         }).catch(() => {
@@ -184,7 +185,7 @@ function MenuPage(){
                                         <p className='productdesc'>{menu.deskripsi}</p>
                                         {auth.data.session ? <>
                                             <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                            <button onClick={() => {toggleEditPopup( menu )}}><img src='editIcon.png'></img></button>
       </> : <>
       <img src='keran.png'></img>
         
@@ -284,14 +285,14 @@ function MenuPage(){
                         <div className='overlay'>
                             <div className=''>
                                 <button onClick={togglePopup} className='close-btn'>X</button>
-                                <h1>Add Coffee</h1>
+                                <h1>Add Menu</h1>
                                 <text className='formtitle'>Product type</text>
                                     <form onSubmit={NambahClick}>
                                     <div>
                                     <select name='kategori'>
-                                        <option  value='Coffee' name="coffe" id='idCoffe'>Coffee</option>
-                                        <option value='Food' name="food" id='idFood'>Food</option>
-                                        <option value='Tea' name="tea" id='idTea'>Tea</option>
+                                        <option  value='coffee' name="coffe" id='idCoffe'>Coffee</option>
+                                        <option value='food' name="food" id='idFood'>Food</option>
+                                        <option value='tea' name="tea" id='idTea'>Tea</option>
                                     </select>
                                     </div>
                                         <div>
