@@ -290,7 +290,7 @@ function MenuPage(){
                                     <form onSubmit={NambahClick}>
                                     <div>
                                     <select name='kategori'>
-                                        <option  value='coffee' name="coffe" id='idCoffe'>Coffee</option>
+                                        <option  value='coffe' name="coffe" id='idCoffe'>Coffe</option>
                                         <option value='food' name="food" id='idFood'>Food</option>
                                         <option value='tea' name="tea" id='idTea'>Tea</option>
                                     </select>
