@@ -4,6 +4,10 @@ import { getAllMenu, getBucket, insertAllMenu, Logout, me, UpdateAllMenu } from 
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
+<<<<<<< HEAD
+
+=======
+>>>>>>> 9501bb711ee00899c191c6e044c10bffcda2fc8d
 import { Navbar } from '../Components/Navbar';
 import { PopUpEdit } from '../Components/PopUpEdit';
 
@@ -317,8 +321,49 @@ function MenuPage(){
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             return <>
+<<<<<<< HEAD
+                                <div className='Editpopup' id='popup-2'>
+                        <div className='overlay'>
+                            <div className=''>
+                                <button onClick={toggleEditPopup} className='close-btn'>X</button>
+                                <h1>Edit Menu</h1>
+                                {/* <text className='formtitle'>Product type</text>
+                                <div>
+                                    <select name='producttype'>
+                                        <option value='Coffee'>Coffee</option>
+                                        <option value='Food'>Food</option>
+                                        <option value='Tea'>Tea</option>
+                                    </select>
+                                    </div> */}
+                                    <form onSubmit={editClick}>
+                                        <div>
+                                <label className='formtitle'>Name</label>
+                                <input defaultValue={menu.id} name="id" hidden></input>
+                                <input defaultValue={menu.nama} className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Description</label>
+                                <input defaultValue={menu.deskripsi} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%]' type="text" placeholder="Deskripsi" name="deskripsi" id="idDeskripsi"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Price</label>     
+                                <input defaultValue={menu.harga} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Harga" name="harga" id="idHarga"  ></input></div>
+                                <text className='formtitle'>Image</text>
+                                <div className='uploadimg'>
+                                    <img src='Group 34.png'></img>
+                                </div>
+                                <button type='submit' className='submitbutton'>Submit</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    </> })} </> : <></>}
+                    
+=======
                                 
                     </> })} </> : <></>}
+>>>>>>> 9501bb711ee00899c191c6e044c10bffcda2fc8d
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
@@ -337,8 +382,8 @@ function MenuPage(){
                     </> : <></>}
                 </div>
             </div>
+                        )
     
-    )
 }
 
 
