@@ -4,17 +4,24 @@ import { getAllMenu, getBucket, insertAllMenu, Logout, me, UpdateAllMenu } from 
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9501bb711ee00899c191c6e044c10bffcda2fc8d
 import { Navbar } from '../Components/Navbar';
+import { PopUpEdit } from '../Components/PopUpEdit';
 
 function MenuPage(){
     function refreshPage() {
         window.location.reload(false);
-      }
+    }
 
     const auth = useAuthState();
     const dispatch = useAuthDispatch();
     const [menus, setMenu] = useState(null);
+    const [isPopUpEditActive, setIsPopUpEditActive] = useState(false);
+    const [popUpEditData, setPopUpEditData] = useState({})
+
     const handleLogout = (e) => {
       e.preventDefault();
       Logout(dispatch)
@@ -24,11 +31,12 @@ function MenuPage(){
     }
     const NambahClick = (e) => {
         e.preventDefault();
+        
         insertAllMenu({
             nama: e.target.nama.value,
             harga: e.target.harga.value,
-            deskripsi: e.target.deskripsi.value
-
+            deskripsi: e.target.deskripsi.value,
+            kategori: e.target.kategori.value
         })
         
         .catch ((err) => {
@@ -54,11 +62,18 @@ function MenuPage(){
     function togglePopup(){
         document.getElementById('popup-1').classList.toggle('active')
     }
-    function toggleEditPopup(){
-        document.getElementById('popup-2').classList.toggle('active')
 
+    function toggleEditPopup(menu) {
+        setIsPopUpEditActive(true)
+        setPopUpEditData(menu)
     }
+
+    function closeEditPopup() {
+        setIsPopUpEditActive(false);
+    }
+
     useEffect(() => {
+        console.log(isPopUpEditActive);
         getAllMenu().then((data) => {
             setMenu(data)
         }).catch((err) => {
@@ -105,11 +120,13 @@ function MenuPage(){
                                         <text className='productname'>{menu.nama}</text>
                                         <text className='price'>{menu.harga}</text>
                                         <p className='productdesc'>{menu.deskripsi}</p>
-                                        {auth.data.session && <>
+                                        {auth.data.session ? <>
                                             <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
-
-                                        </>}
+                                            <button onClick={() => {toggleEditPopup( menu )}}><img src='editIcon.png'></img></button>
+      </> : <>
+        <img src='keran.png'></img>
+        
+      </>}
                                         </div></a>
                                     </li>
                                 </>
@@ -143,7 +160,6 @@ function MenuPage(){
                     </li> */}
                 </ul>
             </div>
-            
     </div>
     <div className='Food'>
             <div className='part1'>
@@ -162,19 +178,26 @@ function MenuPage(){
                                 return refreshPage();
                                 
                             }
-                            return <>
-                                <li>
-                                    <a href='#'><div className='menubox'>
-                                    <img src={menu.gambar}></img>
-                                    <text className='productname'>{menu.nama}</text>
-                                    <text className='price'>{menu.harga}K</text>
-                                    <p className='productdesc'>{menu.deskripsi}</p>
-                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
-                                    </div></a>
-                                </li>
-                                
-                            </>
+                            if(menu.kategori === 'food'){
+                            
+                                return <>
+                                    <li><a href='#'><div className='menubox'>
+                        <img src='Rectangle 27.png' alt='Cruffle'></img>
+                        <text className='productname'>{menu.nama}</text>
+                        <text className='price'>{menu.harga}</text>
+                                        <p className='productdesc'>{menu.deskripsi}</p>
+                                        {auth.data.session ? <>
+                                            <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+      </> : <>
+      <img src='keran.png'></img>
+        
+      </>}
+                            </div></a></li>
+                                </>
+
+
+                            }
                         })}
                     </> : <>
                         No Product
@@ -211,19 +234,28 @@ function MenuPage(){
                                 return refreshPage();
                                 
                             }
-                            return <>
-                                <li>
-                                    <a href='#'><div className='menubox'>
-                                    <img src={menu.gambar}></img>
-                                    <text className='productname'>{menu.nama}</text>
-                                    <text className='price'>{menu.harga}K</text>
-                                    <p className='productdesc'>{menu.deskripsi}</p>
-                                    <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                    <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
-                                    </div></a>
-                                </li>
-                                
-                            </>
+                            if(menu.kategori === 'tea'){
+                            
+                                return <>
+                                    <li><a href='#'><div className='menubox'>
+                        <img src='Rectangle 78.png' alt='Tea'></img>
+                        <text className='productname'>{menu.nama}</text>
+                        <text className='price'>{menu.harga}</text>
+                                        <p className='productdesc'>{menu.deskripsi}</p>
+                                        
+                                        {auth.data.session ? <>
+                                            <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+      </> : <>
+      <img src='keran.png'></img>
+        
+      </>}
+                            </div></a></li>
+                                </>
+
+
+                            }
+
                         })}
                     </> : <>
                         No Product
@@ -258,15 +290,15 @@ function MenuPage(){
                             <div className=''>
                                 <button onClick={togglePopup} className='close-btn'>X</button>
                                 <h1>Add Coffee</h1>
-                                {/* <text className='formtitle'>Product type</text> */}
+                                <text className='formtitle'>Product type</text>
                                     <form onSubmit={NambahClick}>
-                                    {/* <div>
-                                    <select name='producttype'>
+                                    <div>
+                                    <select name='kategori'>
                                         <option  value='Coffee' name="coffe" id='idCoffe'>Coffee</option>
                                         <option value='Food' name="food" id='idFood'>Food</option>
                                         <option value='Tea' name="tea" id='idTea'>Tea</option>
                                     </select>
-                                    </div> */}
+                                    </div>
                                         <div>
                                 <label className='formtitle'>Name</label>
                                 <input className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
@@ -290,6 +322,7 @@ function MenuPage(){
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             return <>
+<<<<<<< HEAD
                                 <div className='Editpopup' id='popup-2'>
                         <div className='overlay'>
                             <div className=''>
@@ -328,6 +361,10 @@ function MenuPage(){
                     </div>
                     </> })} </> : <></>}
                     
+=======
+                                
+                    </> })} </> : <></>}
+>>>>>>> 9501bb711ee00899c191c6e044c10bffcda2fc8d
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
@@ -341,6 +378,9 @@ function MenuPage(){
                         </div>
                     </div>
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
+                    {isPopUpEditActive ? <> 
+                        <PopUpEdit isActive={isPopUpEditActive} menu={popUpEditData} closeCallback={closeEditPopup} />                    
+                    </> : <></>}
                 </div>
             </div>
                         )
