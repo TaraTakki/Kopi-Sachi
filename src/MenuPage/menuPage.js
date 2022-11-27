@@ -4,10 +4,6 @@ import { getAllMenu, getBucket, insertAllMenu, Logout, me, UpdateAllMenu } from 
 import { useAuthDispatch, useAuthState } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../API/supabase';
-<<<<<<< HEAD
-
-=======
->>>>>>> 9501bb711ee00899c191c6e044c10bffcda2fc8d
 import { Navbar } from '../Components/Navbar';
 import { PopUpEdit } from '../Components/PopUpEdit';
 
@@ -321,7 +317,6 @@ function MenuPage(){
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             return <>
-<<<<<<< HEAD
                                 <div className='Editpopup' id='popup-2'>
                         <div className='overlay'>
                             <div className=''>
@@ -359,11 +354,6 @@ function MenuPage(){
 
                     </div>
                     </> })} </> : <></>}
-                    
-=======
-                                
-                    </> })} </> : <></>}
->>>>>>> 9501bb711ee00899c191c6e044c10bffcda2fc8d
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
