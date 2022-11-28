@@ -354,13 +354,19 @@ function MenuPage(){
 
                     </div>
                     </> })} </> : <></>}
+<<<<<<< HEAD
+                    
+=======
+>>>>>>> c0846aba84fa01b2a8e3c8eea6e744b2221e48d5
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
+                            <img src='delete.png' className='deleteicon'></img>
                             <text className='deleteconfirmation'>Are you sure to delete this menu?</text>
                             <ul>
                                 <li>
-                                    <button></button>
+                                    <button className='deleteCancel'>Cancel</button>
+                                    <button className='deleteOk'>OK</button>
                                 </li>
                             </ul>
                             </div>

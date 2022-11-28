@@ -178,6 +178,7 @@ select{
     margin-top: 5%;
 }
 .DeletePopup{
+    position: absolute;
     width: 60%;
     height: 200px;
     border-width: 2px;
@@ -188,9 +189,46 @@ select{
 .deleteconfirmation{
     position: absolute;
     font-size: 30px;
-    margin-top: 3%;
-    margin-left: 5%;
+    margin-top: 2%;
+    margin-left: 20%;
     font-weight: bold;
+}
+.deleteicon{
+    position: absolute;
+    margin-left: 2%;
+}
+.deleteOk{
+    position: absolute;
+    width: 187px;
+    height: 61px;
+    border-radius: 8px;
+    border-color: #2F2105;
+    border-width: 2px;
+    background: #2F2105;
+    color: #F6EBDA;
+    font-weight: 600px;
+    font-size: 30px;
+    margin-top: 8%;
+    margin-left: 50%;
+}
+.deleteCancel{
+    position: absolute;
+    width: 187px;
+    height: 61px;
+    border-radius: 8px;
+    border-color: #2F2105;
+    border-width: 2px;
+    background: #F8D8A9;
+    color: #2F2105;
+    font-weight: 600px;
+    font-size: 30px;
+    margin-top: 8%;
+    margin-left: 25%;
+}
+.DeletePopup li{
+    display: inline-block;
+    margin-left: 20%;
+    margin-top: 5%;
 }
 .menu div:hover{
     animation-name: floating;
