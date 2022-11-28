@@ -279,7 +279,6 @@ function MenuPage(){
                     </li> */}
                 </ul>
             </div>
-            
     </div>
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
