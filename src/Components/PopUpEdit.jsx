@@ -10,6 +10,7 @@ export const PopUpEdit = ({ menu, closeCallback }) => {
             nama: e.target.nama.value,
             harga: e.target.harga.value,
             deskripsi: e.target.deskripsi.value,
+            kategori: e.target.kategori.value
         }).then(() => {
             refreshPage()
         })
@@ -22,14 +23,15 @@ export const PopUpEdit = ({ menu, closeCallback }) => {
                                 <button onClick={closeCallback} className='close-btn'>X</button>
                                 <h1>Edit Menu</h1>
                                 <label className='formtitle'>Product type</label>
-                                <div>                   
+                                
+                                    <form onSubmit={editClick}>
+                                    <div>                   
                                     <select defaultValue={menu.kategori} name='kategori'>
-                                        <option value='Coffee'>Coffee</option>
-                                        <option value='Food'>Food</option>
-                                        <option value='Tea'>Tea</option>
+                                        <option value='coffe'>Coffee</option>
+                                        <option value='food'>Food</option>
+                                        <option value='tea'>Tea</option>
                                     </select>
                                     </div>
-                                    <form onSubmit={editClick}>
                                         <div>
                                 <label className='formtitle'>Name</label>
                                 <input defaultValue={menu.id} name="id" hidden></input>
