@@ -41,13 +41,13 @@
   width: 369px;
   height: 352px;
   position: absolute;
-  margin-top: 100px;
-  margin-left: 827px;
+  margin-top: 10%;
+  margin-left: 70%;
 }
 .kopi{
   position: relative;
-  margin-left: 850px;
-  top: 100px;
+  margin-left: 71%;
+  top: 130px;
 }
 .bijikopi1{
   position: absolute;
@@ -73,7 +73,7 @@
   font-weight: 600;
   color: #878581;
   margin-left: 85px;
-  margin-top: 15px;
+  margin-top: 5%;
 }
 .popular{
 position: absolute;
@@ -81,7 +81,7 @@ font-weight: bold;
 font-size: 35px;
 line-height: 46px;
 margin-left: 75px;
-margin-top: 50px;
+margin-top: 24.5%;
 color: #FF902A;
 }
 .now{
@@ -89,7 +89,7 @@ font-weight: bold;
 font-size: 35px;
 line-height: 46px;
 margin-left: 210px;
-margin-top: 70px;
+margin-top: 26%;
 }
 .promobox{
   position: absolute;
