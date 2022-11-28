@@ -354,10 +354,6 @@ function MenuPage(){
 
                     </div>
                     </> })} </> : <></>}
-<<<<<<< HEAD
-                    
-=======
->>>>>>> c0846aba84fa01b2a8e3c8eea6e744b2221e48d5
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
