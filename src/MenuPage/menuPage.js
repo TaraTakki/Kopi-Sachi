@@ -18,13 +18,6 @@ function MenuPage(){
     const [isPopUpEditActive, setIsPopUpEditActive] = useState(false);
     const [popUpEditData, setPopUpEditData] = useState({})
 
-    const handleLogout = (e) => {
-      e.preventDefault();
-      Logout(dispatch)
-      .then (()=> {
-  
-      })
-    }
     const NambahClick = (e) => {
         e.preventDefault();
         
@@ -51,8 +44,6 @@ function MenuPage(){
             kategori: e.target.kategori.value
         }).then(() => {
             refreshPage()
-        }).catch(() => {
-
         })
     }
 
@@ -242,7 +233,7 @@ function MenuPage(){
                                         
                                         {auth.data.session ? <>
                                             <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                            <button onClick={() => toggleEditPopup(menu)}><img src='editIcon.png'></img></button>
       </> : <>
       <img src='keran.png'></img>
         

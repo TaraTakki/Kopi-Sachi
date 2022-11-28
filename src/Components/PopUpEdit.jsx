@@ -10,11 +10,8 @@ export const PopUpEdit = ({ menu, closeCallback }) => {
             nama: e.target.nama.value,
             harga: e.target.harga.value,
             deskripsi: e.target.deskripsi.value,
-            kategori: e.target.kategori.values
         }).then(() => {
             refreshPage()
-        }).catch(() => {
-
         })
     }
 
@@ -27,7 +24,7 @@ export const PopUpEdit = ({ menu, closeCallback }) => {
                                 <h1>Edit Menu</h1>
                                 <label className='formtitle'>Product type</label>
                                 <div>                   
-                                    <select name='kategori'>
+                                    <select defaultValue={menu.kategori} name='kategori'>
                                         <option value='Coffee'>Coffee</option>
                                         <option value='Food'>Food</option>
                                         <option value='Tea'>Tea</option>
