@@ -14,7 +14,6 @@ export const PopUpEdit = ({ menu, closeCallback }) => {
             refreshPage()
         })
     }
-
     return <>
     
                     <div className={`Editpopup active`} id='popup-2'>
