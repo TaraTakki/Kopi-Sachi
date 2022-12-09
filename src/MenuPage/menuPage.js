@@ -65,6 +65,10 @@ function MenuPage(){
         setPopUpEditData(menu)
     }
 
+    function toggleDeletePopup(){
+        document.getElementById('popup-3').classList.toggle('active')
+    }
+
     function closeEditPopup() {
         setIsPopUpEditActive(false);
     }
@@ -118,7 +122,7 @@ function MenuPage(){
                                         <text className='price'>{menu.harga}</text>
                                         <p className='productdesc'>{menu.deskripsi}</p>
                                         {auth.data.session ? <>
-                                            <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                            <button onClick={toggleDeletePopup}> <img src='ant-design_delete-filled.png'></img></button>
                                             <button onClick={() => {toggleEditPopup( menu )}}><img src='editIcon.png'></img></button>
       </> : <>
         <img src='keran.png'></img>
@@ -140,9 +144,6 @@ function MenuPage(){
                             <img src='Vector.png'></img>
                             </div>
                             </div></button>
-                            <script>
-                        
-                    </script>
                     </li>
                     
                     {/* <li>
@@ -184,7 +185,7 @@ function MenuPage(){
                         <text className='price'>{menu.harga}</text>
                                         <p className='productdesc'>{menu.deskripsi}</p>
                                         {auth.data.session ? <>
-                                            <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                            <button onClick={toggleDeletePopup}> <img src='ant-design_delete-filled.png'></img></button>
                                             <button onClick={() => {toggleEditPopup( menu )}}><img src='editIcon.png'></img></button>
       </> : <>
       <img src='keran.png'></img>
@@ -199,16 +200,13 @@ function MenuPage(){
                     </> : <>
                         No Product
                     </>}
-                    <li>
+                    {/* <li>
                         <button  onClick={togglePopup}><div className='addmenu'>
                             <div className='addproduct'>
                             <img src='Vector.png'></img>
                             </div>
                             </div></button>
-                            <script>
-                        
-                    </script>
-                    </li>
+                    </li> */}
 
                 </ul>
             </div>
@@ -257,29 +255,16 @@ function MenuPage(){
                     </> : <>
                         No Product
                     </>}
-                    <li>
+                    {/* <li>
                         <button  onClick={togglePopup}><div className='addmenu'>
                             <div className='addproduct'>
                             <img src='Vector.png'></img>
                             </div>
                             </div></button>
-                            <script>
-                    </script>
-                    </li>
-                    
-                    {/* <li>
-                        <a href='#'><div className='menubox'>
-                        <img src='Rectangle 29.png' alt='Cappucino'></img>
-                        <text className='productname'>Cappucino</text></div></a>
-                    </li>
-                    <li>
-                        <a href='#'><div className='menubox'>
-                        <img src='Rectangle 31.png' alt='Moccacino'></img>
-                        <text className='productname'>Moccacino</text></div></a>
                     </li> */}
+
                 </ul>
-            </div>
-            
+            </div>            
     </div>
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
@@ -355,10 +340,7 @@ function MenuPage(){
 
                     </div>
                     </> })} </> : <></>}
-<<<<<<< HEAD
                     
-=======
->>>>>>> c0846aba84fa01b2a8e3c8eea6e744b2221e48d5
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>

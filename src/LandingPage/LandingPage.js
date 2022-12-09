@@ -39,9 +39,6 @@ return(
       <p>with a glass of coffee in the morning</p>
       </div>
       <div className='flex justify-start ml-20 my-5'>
-      <a href='/menu' class="bg-yellow-900 hover:bg-yellow-600 text-orange-300 font-semibold hover:text-white py-2 px-4 border-5 border-red-900 hover:border-transparent rounded-full">
-      More menu
-      </a>
       </div>
       <p className='popular'>Popular</p>
       <p className='now'>now</p>
