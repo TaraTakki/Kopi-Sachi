@@ -18,13 +18,6 @@ function MenuPage(){
     const [isPopUpEditActive, setIsPopUpEditActive] = useState(false);
     const [popUpEditData, setPopUpEditData] = useState({})
 
-    const handleLogout = (e) => {
-      e.preventDefault();
-      Logout(dispatch)
-      .then (()=> {
-  
-      })
-    }
     const NambahClick = (e) => {
         e.preventDefault();
         
@@ -51,8 +44,6 @@ function MenuPage(){
             kategori: e.target.kategori.value
         }).then(() => {
             refreshPage()
-        }).catch(() => {
-
         })
     }
 
@@ -240,7 +231,7 @@ function MenuPage(){
                                         
                                         {auth.data.session ? <>
                                             <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
-                                            <button onClick={toggleEditPopup}><img src='editIcon.png'></img></button>
+                                            <button onClick={() => toggleEditPopup(menu)}><img src='editIcon.png'></img></button>
       </> : <>
       <img src='keran.png'></img>
         
@@ -264,7 +255,11 @@ function MenuPage(){
                     </li> */}
 
                 </ul>
+<<<<<<< HEAD
             </div>            
+=======
+            </div>
+>>>>>>> cda07e65d63ba07854fcb80da2783f17fb8aa135
     </div>
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
@@ -300,6 +295,7 @@ function MenuPage(){
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     {menus !== null ? <>
                         {menus.map((menu) => {
                             return <>
@@ -341,6 +337,8 @@ function MenuPage(){
                     </div>
                     </> })} </> : <></>}
                     
+=======
+>>>>>>> cda07e65d63ba07854fcb80da2783f17fb8aa135
                     <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
