@@ -305,7 +305,7 @@ function MenuPage(){
                             </div>
                         </div>
                     </div>
-                    <div className='DeletePopup' id='popup-3'>
+                    {/* <div className='DeletePopup' id='popup-3'>
                         <div className='overlay'>
                             <div>
                             <img src='delete.png' className='deleteicon'></img>
@@ -318,7 +318,7 @@ function MenuPage(){
                             </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     {/* <button onClick='showPopup()' className='addmenu'></button> */}
                     {isPopUpEditActive ? <> 
                         <PopUpEdit isActive={isPopUpEditActive} menu={popUpEditData} closeCallback={closeEditPopup} />                    
