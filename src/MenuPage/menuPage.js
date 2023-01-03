@@ -56,6 +56,10 @@ function MenuPage(){
         setPopUpEditData(menu)
     }
 
+    function toggleDeletePopup(){
+        document.getElementById('popup-3').classList.toggle('active')
+    }
+
     function closeEditPopup() {
         setIsPopUpEditActive(false);
     }
@@ -109,7 +113,7 @@ function MenuPage(){
                                         <text className='price'>{menu.harga}</text>
                                         <p className='productdesc'>{menu.deskripsi}</p>
                                         {auth.data.session ? <>
-                                            <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                            <button onClick={toggleDeletePopup}> <img src='ant-design_delete-filled.png'></img></button>
                                             <button onClick={() => {toggleEditPopup( menu )}}><img src='editIcon.png'></img></button>
       </> : <>
         <img src='keran.png'></img>
@@ -131,9 +135,6 @@ function MenuPage(){
                             <img src='Vector.png'></img>
                             </div>
                             </div></button>
-                            <script>
-                        
-                    </script>
                     </li>
                     
                     {/* <li>
@@ -175,7 +176,7 @@ function MenuPage(){
                         <text className='price'>{menu.harga}</text>
                                         <p className='productdesc'>{menu.deskripsi}</p>
                                         {auth.data.session ? <>
-                                            <button onClick={HandleDelete}> <img src='ant-design_delete-filled.png'></img></button>
+                                            <button onClick={toggleDeletePopup}> <img src='ant-design_delete-filled.png'></img></button>
                                             <button onClick={() => {toggleEditPopup( menu )}}><img src='editIcon.png'></img></button>
       </> : <>
       <img src='keran.png'></img>
@@ -190,16 +191,13 @@ function MenuPage(){
                     </> : <>
                         No Product
                     </>}
-                    <li>
+                    {/* <li>
                         <button  onClick={togglePopup}><div className='addmenu'>
                             <div className='addproduct'>
                             <img src='Vector.png'></img>
                             </div>
                             </div></button>
-                            <script>
-                        
-                    </script>
-                    </li>
+                    </li> */}
 
                 </ul>
             </div>
@@ -248,28 +246,20 @@ function MenuPage(){
                     </> : <>
                         No Product
                     </>}
-                    <li>
+                    {/* <li>
                         <button  onClick={togglePopup}><div className='addmenu'>
                             <div className='addproduct'>
                             <img src='Vector.png'></img>
                             </div>
                             </div></button>
-                            <script>
-                    </script>
-                    </li>
-                    
-                    {/* <li>
-                        <a href='#'><div className='menubox'>
-                        <img src='Rectangle 29.png' alt='Cappucino'></img>
-                        <text className='productname'>Cappucino</text></div></a>
-                    </li>
-                    <li>
-                        <a href='#'><div className='menubox'>
-                        <img src='Rectangle 31.png' alt='Moccacino'></img>
-                        <text className='productname'>Moccacino</text></div></a>
                     </li> */}
+
                 </ul>
+<<<<<<< HEAD
+            </div>            
+=======
             </div>
+>>>>>>> cda07e65d63ba07854fcb80da2783f17fb8aa135
     </div>
                     <div className='popup' id='popup-1'>
                         <div className='overlay'>
@@ -305,7 +295,55 @@ function MenuPage(){
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     {/* <div className='DeletePopup' id='popup-3'>
+=======
+<<<<<<< HEAD
+                    {menus !== null ? <>
+                        {menus.map((menu) => {
+                            return <>
+                                <div className='Editpopup' id='popup-2'>
+                        <div className='overlay'>
+                            <div className=''>
+                                <button onClick={toggleEditPopup} className='close-btn'>X</button>
+                                <h1>Edit Menu</h1>
+                                {/* <text className='formtitle'>Product type</text>
+                                <div>
+                                    <select name='producttype'>
+                                        <option value='Coffee'>Coffee</option>
+                                        <option value='Food'>Food</option>
+                                        <option value='Tea'>Tea</option>
+                                    </select>
+                                    </div> */}
+                                    <form onSubmit={editClick}>
+                                        <div>
+                                <label className='formtitle'>Name</label>
+                                <input defaultValue={menu.id} name="id" hidden></input>
+                                <input defaultValue={menu.nama} className='w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Nama" name="nama" id="idNama"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Description</label>
+                                <input defaultValue={menu.deskripsi} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%]' type="text" placeholder="Deskripsi" name="deskripsi" id="idDeskripsi"></input>
+                                </div>
+                                <div>
+                                <label className='formtitle'>Price</label>     
+                                <input defaultValue={menu.harga} className=' w-[90%] txtbgcolor rounded-lg bg-[#F8D8A9] mt-3 p-1 px-3 title font-semibold ml-[5%] ' type="text" placeholder="Harga" name="harga" id="idHarga"  ></input></div>
+                                <text className='formtitle'>Image</text>
+                                <div className='uploadimg'>
+                                    <img src='Group 34.png'></img>
+                                </div>
+                                <button type='submit' className='submitbutton'>Submit</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    </> })} </> : <></>}
+                    
+=======
+>>>>>>> cda07e65d63ba07854fcb80da2783f17fb8aa135
+                    <div className='DeletePopup' id='popup-3'>
+>>>>>>> a5a5d0d982597b971d7da976198b4d41ca0ffb67
                         <div className='overlay'>
                             <div>
                             <img src='delete.png' className='deleteicon'></img>
